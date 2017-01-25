@@ -3,6 +3,6 @@
 requirejs.config({
     baseUrl : 'js',
     paths : {
-       lodash : 'lodash.min'
+       lodash : '/libraries/lodash.min'
     }
 });

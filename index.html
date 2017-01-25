@@ -5,14 +5,14 @@
    <title>Introduction To RequireJS</title>
 </head>
  <body>
-     <script data-main="js/config" src="require.js"></script>
+     <script data-main="js/config" src="/js/libraries/require"></script>
 <!--     <script>alert('before require keyword');</script> -->
      <script>
      require(['config'], function() {
         // all of your code here
 //        alert();
        // alert('after require keyword');
-       require(['customScripts/lodashFile'])
+       require(['createprimatives'])
      });
      </script>
  </body>
