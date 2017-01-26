@@ -20,9 +20,6 @@ document.write('<br>');
 */
 
 var sketch = function( p ) {
-
-   var x = 100;
-   var y = 100;
   
    p.setup = function() {
      p.createCanvas(700, 410);
