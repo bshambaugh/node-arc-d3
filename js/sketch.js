@@ -31,6 +31,24 @@ var sketch = function( p ) {
      p.fill(255);
      p.stroke(255);
 
+     for(var i = 0; i < nums.length - 1; i++) {
+        p.line(nums[i][0], nums[i][1], nums[i+1][0], nums[i+1][1]);
+     }
+
+
+     for(var i = 0; i < nums.length; i++) {
+        p.ellipse(nums[i][0], nums[i][1],radius, radius);
+        p.fill(0);
+        p.text(titles[i], nums[i][0] - titles[i].length - tw, nums[i][1] + 0.5*tw, tw);
+        p.fill(255);
+     }
+/*     
+      for(var i = 0; i < nums.length; i++) {
+         p.ellipse(nums[i][0], nums[i][1],radius, radius);
+         p.text(titles[i], nums[i][0] - titles[i].length - tw, nums[i][1] + 0.5*tw, tw);
+      }
+
+
      p.line(nums[0][0], nums[0][1], nums[1][0], nums[1][1]);
      p.line(nums[1][0],nums[1][1], nums[2][0], nums[2][1]);
 
@@ -42,6 +60,7 @@ var sketch = function( p ) {
 
      p.ellipse(nums[2][0],nums[2][1], radius, radius);
      p.text(titles[2],nums[2][0] - titles[2].length - tw, nums[2][1] + 0.5*tw, tw);
+*/
 
    };
 }; 
