@@ -10,6 +10,18 @@ var height = 400;
 ///document.write('<br>');
 
 var primatives = constructPrimatives(triples,width,height);
+
+return {
+   createprimatives: primatives 
+}
+/*
+return {
+   createprimatives: function() {
+   constructPrimatives(triples,width,height);
+   }
+};
+*/
+
 //console.log(primatives);
 //console.log(primatives.nodes);
 //console.log(primatives.edges);

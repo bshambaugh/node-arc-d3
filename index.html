@@ -8,7 +8,7 @@
      <script data-main="js/config" src="js/libraries/require.js"></script>
     <script>alert('before require keyword');</script> 
      <script>
-     require(['config','tests/calledFile'], function() {
+     require(['config','createprimatives'], function() {
         // all of your code here
 //        alert();
 //        alert('after require keyword');
@@ -17,7 +17,7 @@
 //          require(['createprimatives'], function() {
 //             require(['tests/call-create-primatives-tests'])             
 //          }); 
-            require(['tests/callingFile'])
+            require(['test'])
          });
      </script>
  </body>
