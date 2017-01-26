@@ -8,16 +8,16 @@
      <script data-main="js/config" src="js/libraries/require.js"></script>
     <script>alert('before require keyword');</script> 
      <script>
-     require(['config','createprimatives'], function() {
+     require(['config','tests/calledFile'], function() {
         // all of your code here
 //        alert();
 //        alert('after require keyword');
 //       require(['tests/createprimatives-tests'])
 //     });
-          require(['createprimatives'], function() {
-             require(['tests/call-create-primatives-tests'])             
-          }); 
- 
+//          require(['createprimatives'], function() {
+//             require(['tests/call-create-primatives-tests'])             
+//          }); 
+            require(['tests/callingFile'])
          });
      </script>
  </body>
