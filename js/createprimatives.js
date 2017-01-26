@@ -6,14 +6,14 @@ var triples = [["d", "i", "q"],["a", "f", "c"],["c", "g", "d"],["e", "h", "c"],[
 var width = 400;
 var height = 400;
 
-document.write(triples);
-document.write('<br>');
+///document.write(triples);
+///document.write('<br>');
 
 var primatives = constructPrimatives(triples,width,height);
 //console.log(primatives);
 //console.log(primatives.nodes);
 //console.log(primatives.edges);
-document.write(primatives.nodes[0].x);
+///document.write(primatives.nodes[0].x);
 //var edges = primatives[0];
 //var nodes = primatives[1];
 //console.log(edges);
