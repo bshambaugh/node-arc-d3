@@ -27,17 +27,17 @@ fetcher.nowOrWhenFetched(url, function(ok, body, xhr) {
         // the store contains an object with the triples and the store...
          document.write(store);
 //        document.write('whatever'+'\n');
-         var lucky = store.each();
+    //     var lucky = store.each();
       //  document.write(lucky);
-         document.write(Object.getOwnPropertyNames(lucky));
+//         document.write(Object.getOwnPropertyNames(lucky));
      //    document.write(lucky['13']);      
          
-         for (var i=0; i < lucky.length;i++) {
+//        for (var i=0; i < lucky.length;i++) {
     //       console.log(lucky[i].subject.uri);
            //console.log(luck);
         //   console.log(luck.subject.uri) // a person having friends
         //  console.log(luck.object.uri) // a friend of a person
-}
+//}
  
     }
 })
