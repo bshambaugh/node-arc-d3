@@ -26,6 +26,11 @@ fetcher.nowOrWhenFetched(url, function(ok, body, xhr) {
         // do something with the data in the store (see below)
         // the store contains an object with the triples and the store...
          document.write(store);
+         document.write($rdf.SPARQLToQuery('SELECT+*+WHERE+{+%3Fs+%3Fp+%3Fo+.+}%0D%0ALIMIT+10'));
+         var ele = $rdf.SPARQLToQuery('SELECT+*+WHERE+{+%3Fs+%3Fp+%3Fo+.+}%0D%0ALIMIT+10',store);
+         document.write(Object.getOwnPropertyNames(ele));
+         document.write(ele.pat);
+         
 //        document.write('whatever'+'\n');
     //     var lucky = store.each();
       //  document.write(lucky);
