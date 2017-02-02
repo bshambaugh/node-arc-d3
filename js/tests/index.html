@@ -28,7 +28,7 @@ var simulation = d3.forceSimulation()
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
 
-d3.json("createprimatives-out3.json", function(error, graph) {
+d3.json("createprimatives-out4.json", function(error, graph) {
   if (error) throw error;
 
   var link = svg.append("g")
@@ -37,6 +37,19 @@ d3.json("createprimatives-out3.json", function(error, graph) {
     .data(graph.links)
     .enter().append("line")
       .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+   
+  var linklabel = svg.append("g")
+                  .attr("class","links")
+                  .selectAll("text")
+                  .data(graph.links)
+                  .enter().append("text");
+
+   var linklabels = linklabel
+                    .text( function(d) { return d.label; })
+                    .attr("font-family","sans-serif")
+                    .attr("font-size","10px")
+                    .attr("fill","black");
+
 
   var node = svg.append("g")
       .attr("class", "nodes")
@@ -49,6 +62,7 @@ d3.json("createprimatives-out3.json", function(error, graph) {
           .on("start", dragstarted)
           .on("drag", dragged)
           .on("end", dragended));
+
 
    var nodelabel = svg.append("g")
                    .attr("class","nodes")
@@ -69,6 +83,7 @@ d3.json("createprimatives-out3.json", function(error, graph) {
                     .attr("font-size","10px")
                     .attr("fill","black");
 
+
   node.append("title")
       .text(function(d) { return d.id; });
 
@@ -85,14 +100,17 @@ d3.json("createprimatives-out3.json", function(error, graph) {
         .attr("y1", function(d) { return d.source.y; })
         .attr("x2", function(d) { return d.target.x; })
         .attr("y2", function(d) { return d.target.y; });
-
+    linklabels
+        .attr("x", function(d) { return (d.source.x + d.target.x)/2; })
+        .attr("y", function(d) { return (d.source.y + d.target.y)/2; });     
     node
         .attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; });
-    nodelabels
+   
+  nodelabels
         .attr("x", function(d) { return d.x; })
-        .attr("y", function(d) { return d.y; })
-  }
+        .attr("y", function(d) { return d.y; }) 
+ }
 });
 
 function dragstarted(d) {
