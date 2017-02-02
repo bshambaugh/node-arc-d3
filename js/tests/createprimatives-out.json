@@ -1,0 +1,37 @@
+{ edges: 
+   [ edge {
+       point1: [Object],
+       point1_name_and_subject: 'd',
+       point2: [Object],
+       point2_name_and_object: 'q',
+       label_and_predicate_name: 'i' },
+     edge {
+       point1: [Object],
+       point1_name_and_subject: 'a',
+       point2: [Object],
+       point2_name_and_object: 'c',
+       label_and_predicate_name: 'f' },
+     edge {
+       point1: [Object],
+       point1_name_and_subject: 'c',
+       point2: [Object],
+       point2_name_and_object: 'd',
+       label_and_predicate_name: 'g' },
+     edge {
+       point1: [Object],
+       point1_name_and_subject: 'e',
+       point2: [Object],
+       point2_name_and_object: 'c',
+       label_and_predicate_name: 'h' },
+     edge {
+       point1: [Object],
+       point1_name_and_subject: 'c',
+       point2: [Object],
+       point2_name_and_object: 'q',
+       label_and_predicate_name: 'i' } ],
+  nodes: 
+   [ node { x: 255.57936822280044, y: 331.22251230290266, node_name: 'a' },
+     node { x: 112.63461256381824, y: 93.94195871294046, node_name: 'c' },
+     node { x: 138.86986402272302, y: 150.41238179841443, node_name: 'd' },
+     node { x: 46.345383532773084, y: 320.08981490932575, node_name: 'e' },
+     node { x: 211.29625341547847, y: 330.1702454972266, node_name: 'q' } ] }
