@@ -8,7 +8,7 @@
      <script data-main="js/config" src="js/libraries/require.js"></script>
     <script>alert('before require keyword');</script> 
      <script>
-     require(['config'], function() {
+     require(['config','parsetriples'], function(parsetriples) {
         // all of your code here
 //        alert();
 //        alert('after require keyword');
@@ -18,7 +18,13 @@
 //             require(['tests/call-create-primatives-tests'])             
 //          }); 
 //            require(['sketch'])
-              require(['n3parse-triples'])
+                require(['createprimatives'])
+//              require(['callparsedtriples'])            
+//             require(['n3parse-triples'])
+/*           require(['n3parse-triples'], function() {
+                require(['createprimatives'])
+            }); */
+//              require(['tests/amd-common-n3parse-triples'])
 //              require(['tests/test2-rdflib'])
 //            require(['tests/call-createprimatives-test'])
          });

@@ -1,0 +1,37 @@
+<html>
+ <head>
+  <script src="../libraries/jquery-3.1.1.min.js"></script>
+ </head>
+ <body>
+  <script>
+
+/*  
+  function reqListener () {
+    console.log(this.responseText);
+  }
+
+var oReq = new XMLHttpRequest();
+oReq.addEventListener("load", reqListener);
+oReq.open("GET", "http://localhost/node-arc-d3/js/loadFile/miserables.json");
+oReq.send();
+*/
+
+/*
+var client = new XMLHttpRequest();
+client.open('GET', 'http://localhost/node-arc-d3/js/loadFile/miserables.json');
+client.onreadystatechange = function() {
+//  alert(client.responseText);
+//  document.write(JSON.stringify(client.responseText));
+}
+client.send();
+*/
+
+
+jQuery.get('http://localhost/node-arc-d3/js/loadFile/miserables.json', function(data) {
+ //   alert(data);
+ document.write(JSON.stringify(data));
+});
+
+  </script>
+ </body>
+</html>

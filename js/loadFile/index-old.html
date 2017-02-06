@@ -1,0 +1,30 @@
+<html>
+ <head>
+  <script src="../libraries/jquery-3.1.1.min.js"></script>
+ </head>
+ <body>
+  <script>
+    var jqxhr = $.get( "miserables.json", function() {
+  alert( "success" );
+})
+  .done(function() {
+    alert( "second success" );
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+    alert( "finished" );
+  });
+ 
+// Perform other work here ...
+ 
+// Set another completion function for the request above
+jqxhr.always(function() {
+  alert( "second finished" );
+});
+
+document.write(JSON.stringify(jqxhr));
+  </script>
+ </body>
+</html>

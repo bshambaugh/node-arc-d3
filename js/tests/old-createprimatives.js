@@ -28,7 +28,7 @@ $.get(url, function(data) {
      document.write(duck);
      document.write('<br><br>');
      document.write(duck[0]);
-     var primatives = constructPrimatives(duck,width,height);
+     var primatives = constructPrimatives(triples,width,height);
      document.write(primatives);
   });
 
@@ -36,16 +36,40 @@ $.get(url, function(data) {
 });
 
 
-// var triples = [["d", "i", "q"],["a", "f", "c"],["c", "g", "d"],["e", "h", "c"],["c", "i", "q"]];
-//var width = 400;
-//var height = 400;
+///document.write(triples);
+///document.write('<br>');
+
+var primatives = constructPrimatives(triples,width,height);
+//document.write(primatives);
+
+return {
+   createprimatives: primatives 
+}
+/*
+return {
+   createprimatives: function() {
+   constructPrimatives(triples,width,height);
+   }
+};
+*/
+
+//console.log(primatives);
+//console.log(primatives.nodes);
+//console.log(primatives.edges);
+///document.write(primatives.nodes[0].x);
+//var edges = primatives[0];
+//var nodes = primatives[1];
+//console.log(edges);
+//console.log(nodes);
 
 /*
-//var primatives = constructPrimatives(triples,width,height);
-var JSONprimatives = constructPrimatives(triples,width,height);
-//   console.log(primatives);
-//console.log(JSONprimatives);
-document.write(JSONprimatives);
+// The following are equivalent
+console.log(edges[0].point1);
+console.log(primatives[0][0].point1);
+
+//The following are equivalent
+console.log(nodes[0].node_name);
+console.log(primatives[1][0].node_name);
 */
 
 function constructPrimatives(triples,width,height) {
@@ -87,9 +111,9 @@ var uniqNodes = _.uniq(_.concat(subjects,objects).sort());
 
 var nodes = [];
 for(var i = 0; i < uniqNodes.length; i++) {
-    var group = 1;
-//  nodes.push(new node(points[i][0],points[i][1],uniqNodes[i]));
-    nodes.push(new node(uniqNodes[i],group));
+ var group = 1;
+ // nodes.push(new node(points[i][0],points[i][1],uniqNodes[i]));
+  nodes.push(new node(uniqNodes[i],group));
 }
 // plot the points here..
 
@@ -105,7 +129,7 @@ for(var i = 0; i < triples.length; i++) {
     if(triples[i][0] == uniqNodes[j]) {
    //   console.log('S:We are the same for ' + triples[i][0] + ' and ' + uniqNodes[j] + ' at ' + j + ' and the point is ' + points[j]); 
       var a = points[j];
-     // var a_name = uniqNodes[j];
+    //  var a_name = uniqNodes[j];
       var source = uniqNodes[j];
     }
 
@@ -121,9 +145,9 @@ for(var i = 0; i < triples.length; i++) {
 //   var b = returnPoint(triples[i][2],uniqNodes[j]);
 //     console.log(a + ' : ' + b);
   }
-  var value = 1
+    var value = 1;
   //   console.log('line ab is : ' + a + ' to ' + b + ' for ' + triples[i][1]);
-  //   lines.push(new edge(a,a_name,b,b_name,triples[i][1])); 
+//     lines.push(new edge(a,a_name,b,b_name,triples[i][1])); 
      links.push(new link(source,target,value,triples[i][1]));
 }
 
@@ -136,38 +160,38 @@ for(var i = 0; i < triples.length; i++) {
 //var primatives = [lines,nodes]
 //var primatives = {edges: lines, nodes: nodes};
 var primatives = {links: links, nodes: nodes};
-//console.log(JSON.stringify(primatives));
-var JSONprimatives = JSON.stringify(primatives);
 //console.log(primatives);
-//return primatives;
 return JSONprimatives;
+//return primatives;
 }
 
-//function edge(a,a_name,b,b_name,label) {
 function link(source,target,value,label) {
   this.source = source;
   this.target = target;
   this.value = value;
   this.label = label;
-/*  this.point1 = a;
-  this.point1_name_and_subject = a_name;
-  this.point2 = b;
-  this.point2_name_and_object = b_name;
-  this.label_and_predicate_name = label;
-*/
 }
 
-//function node(point1,point2,name) {
 function node(id,group) {
-//  this.x = point1;
-//  this.y = point2;
-//  this.node_name = name;
     this.id = id;
     this.group = group;
 }
 
+/*
+function edge(a,a_name,b,b_name,label) {
+  this.point1 = a;
+  this.point1_name_and_subject = a_name;
+  this.point2 = b;
+  this.point2_name_and_object = b_name;
+  this.label_and_predicate_name = label;
+}
 
-
+function node(point1,point2,name) {
+  this.x = point1;
+  this.y = point2;
+  this.node_name = name;
+}
+*/
 
 });
 
