@@ -3,6 +3,9 @@ define(['d3','jquery'], function(d3,$) {
  var width = 800;
  var height = 800;
 
+ var graph = {"links":[{"source":"http://localhost/node-arc-p5/data/Food-Growing-Methods.ttl","target":"\"Food Growing Methods\"","value":1,"label":"http://purl.org/dc/terms/title"},{"source":"http://localhost/node-arc-p5/data/Food-Growing-Methods.ttl","target":"\"For independence and resource optimization, some or all of the astronauts diet must be grown in-situ. Various forms have been proposed, from greenhouses to hydroponics, but there must also be optimization in the types of food grown to maximize caloric and nutrient output compared to water and energy input.\"","value":1,"label":"http://www.w3.org/2000/01/rdf-schema#comment"},{"source":"http://localhost/node-arc-p5/data/Food-Growing-Methods.ttl","target":"\"0.0(investment cost pulled from children pages)\"","value":1,"label":"http://data.thespaceplan.com/ontologies/lsi#averageEstInvestmentCost"},{"source":"http://localhost/node-arc-p5/data/Food-Growing-Methods.ttl","target":"\"0.0 (time to maturity pulled from children pages)\"","value":1,"label":"http://data.thespaceplan.com/ontologies/lsi#averageEstTimetoMaturity"},{"source":"http://localhost/node-arc-p5/data/Food-Growing-Methods.ttl","target":"\"Research\"","value":1,"label":"http://data.thespaceplan.com/ontologies/lsi#commercialStatus"},{"source":"http://localhost/node-arc-p5/data/Food-Growing-Methods.ttl","target":"\"Health and Medicine\"","value":1,"label":"http://data.thespaceplan.com/ontologies/lsi#relatedIndustriesFields"},{"source":"http://localhost/node-arc-p5/data/Food-Growing-Methods.ttl","target":"http://investors.ddns.net:8080/marmotta/ldp/waypaver-lsi/biological-support","value":1,"label":"http://data.thespaceplan.com/ontologies/lsi#label"},{"source":"http://localhost/node-arc-p5/data/Food-Growing-Methods.ttl","target":"http://investors.ddns.net:8080/marmotta/ldp/waypaver-lsi/habitation-infrastructure","value":1,"label":"http://data.thespaceplan.com/ontologies/lsi#label"}],"nodes":[{"id":"\"0.0 (time to maturity pulled from children pages)\"","group":1},{"id":"\"0.0(investment cost pulled from children pages)\"","group":1},{"id":"\"Food Growing Methods\"","group":1},{"id":"\"For independence and resource optimization, some or all of the astronauts diet must be grown in-situ. Various forms have been proposed, from greenhouses to hydroponics, but there must also be optimization in the types of food grown to maximize caloric and nutrient output compared to water and energy input.\"","group":1},{"id":"\"Health and Medicine\"","group":1},{"id":"\"Research\"","group":1},{"id":"http://investors.ddns.net:8080/marmotta/ldp/waypaver-lsi/biological-support","group":1},{"id":"http://investors.ddns.net:8080/marmotta/ldp/waypaver-lsi/habitation-infrastructure","group":1},{"id":"http://localhost/node-arc-p5/data/Food-Growing-Methods.ttl","group":1}]}
+
+/*
  var graph = {
   "nodes": [
     {"id": "Myriel", "group": 1},
@@ -340,6 +343,7 @@ define(['d3','jquery'], function(d3,$) {
     {"source": "Mme.Hucheloup", "target": "Enjolras", "value": 1}
   ]
 };
+*/
 
  var svgContainer = d3.select("body").append("svg")
                                        .attr("width",width)
@@ -366,7 +370,7 @@ define(['d3','jquery'], function(d3,$) {
                   .enter().append("text");
 
    var linklabels = linklabel
-                    .text( function(d) { return d.source; })
+                    .text( function(d) { return d.label; })
                     .attr("font-family","sans-serif")
                     .attr("font-size","10px")
                     .attr("fill","black");
