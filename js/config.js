@@ -5,6 +5,7 @@ requirejs.config({
     paths : {
        lodash : 'libraries/lodash.min',
        n3lib : 'libraries/bun2-exportN3',
-       jquery: 'libraries/jquery-3.1.1.min'
+       jquery: 'libraries/jquery-3.1.1.min',
+       d3 : 'libraries/d3'
     }
 });
