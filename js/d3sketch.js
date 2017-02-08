@@ -1,6 +1,31 @@
 define(['d3','jquery','createprimatives'], function(d3,$,createprimatives) { 
  var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
 
+function longProcess(callbackfn) {
+   // do something
+     var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl'; 
+   createprimatives(url, function(duckei) {
+   //console.log(duckei);
+    var dope = duckei;
+  //   console.log(dope);
+    callbackfn(dope);
+  });
+
+//  document.write(astring);
+}
+
+function myCallback(results) {
+  width = 800;
+  height = 800;
+  console.log(results);
+  draw(width,height,results);
+}
+
+longProcess(myCallback);
+
+
+
+/*
   loader(url, function(duck) {
   var height = 800;
   var width = 800;
@@ -16,6 +41,7 @@ function loader(url, fn) {
    fn(dope);
   });
 };
+*/
 
 /*
 longProcess(url, function(graph) {

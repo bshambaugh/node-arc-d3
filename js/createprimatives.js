@@ -2,9 +2,9 @@
 
 define(['lodash','jquery','parsetriples'], function(_,$,parsetriples) {
  
-var triples = [["d", "i", "q"],["a", "f", "c"],["c", "g", "d"],["e", "h", "c"],["c", "i", "q"]];
-var width = 400;
-var height = 400;
+//var triples = [["d", "i", "q"],["a", "f", "c"],["c", "g", "d"],["e", "h", "c"],["c", "i", "q"]];
+//var w = 400;
+//var h = 400;
 //document.write(triples);
 //document.write(constructPrimatives(triples,width,height));
 
@@ -30,7 +30,8 @@ $.get(url, function(data) {
   //   document.write(duck);
   //   document.write('<br><br>');
   //   document.write(duck[0]);
-     var primatives = constructPrimatives(duck,width,height);
+       var primatives = constructPrimatives(duck);
+//     var primatives = constructPrimatives(duck,w,h);
 //     document.write(primatives);
      fn(primatives);
   });
@@ -52,7 +53,8 @@ var JSONprimatives = constructPrimatives(triples,width,height);
 document.write(JSONprimatives);
 */
 
-function constructPrimatives(triples,width,height) {
+function constructPrimatives(triples) {
+// function constructPrimatives(triples,w,h) {
 //subject array
 var subjects = [];
 //object array
@@ -83,9 +85,11 @@ var uniqNodes = _.uniq(_.concat(subjects,objects).sort());
 
 // now that I have the points...find the predicates that correspond to these...
 
+/*
  var points = uniqNodes.map(function(elem) {
-    return [Math.random() * width, Math.random() * height];
+    return [Math.random() * w, Math.random() * h];
  });
+*/
  
 // console.log(points);
 
@@ -108,7 +112,7 @@ for(var i = 0; i < triples.length; i++) {
 
     if(triples[i][0] == uniqNodes[j]) {
    //   console.log('S:We are the same for ' + triples[i][0] + ' and ' + uniqNodes[j] + ' at ' + j + ' and the point is ' + points[j]); 
-      var a = points[j];
+//      var a = points[j];
      // var a_name = uniqNodes[j];
       var source = uniqNodes[j];
     }
@@ -117,7 +121,7 @@ for(var i = 0; i < triples.length; i++) {
 
     if(triples[i][2] == uniqNodes[j]) {
  //      console.log('O:We are the same for ' + triples[i][2] + ' and ' + uniqNodes[j] + ' at ' + j + ' and the point is ' + points[j]); 
-       var b = points[j];
+  //     var b = points[j];
      //  var b_name = uniqNodes[j];
        var target = uniqNodes[j]; 
    }
