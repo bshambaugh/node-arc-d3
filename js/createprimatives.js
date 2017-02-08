@@ -8,7 +8,9 @@ var height = 400;
 //document.write(triples);
 //document.write(constructPrimatives(triples,width,height));
 
-var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
+//return function (null ,
+return function (url, fn) {
+//var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
 $.get(url, function(data) {
  //   alert(data);
 // document.write(JSON.stringify(data));
@@ -17,24 +19,26 @@ $.get(url, function(data) {
  var string_2 = string.replace(/'/ig,'\\\'');
  var string_3 = string_2.replace(/<>/ig,'<'+url+'>');
 // var string2 = str.replace("\'","\\\'");
- document.write(string_3);
- document.write('<br><br>');
+// document.write(string_3);
+// document.write('<br><br>');
 
   parsetriples(string_3, function(duck) {
 //    document.write(N3);
 //    console.log(N3);
 //    console.log(Object.getOwnPropertyNames(N3));
 //   console.log(duck);
-     document.write(duck);
-     document.write('<br><br>');
-     document.write(duck[0]);
+  //   document.write(duck);
+  //   document.write('<br><br>');
+  //   document.write(duck[0]);
      var primatives = constructPrimatives(duck,width,height);
-     document.write(primatives);
+//     document.write(primatives);
+     fn(primatives);
   });
 
 
 });
 
+};
 
 // var triples = [["d", "i", "q"],["a", "f", "c"],["c", "g", "d"],["e", "h", "c"],["c", "i", "q"]];
 //var width = 400;
