@@ -2,16 +2,12 @@ define(['d3','jquery','createprimatives'], function(d3,$,createprimatives) {
  var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
 
 function longProcess(callbackfn) {
-   // do something
-     var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl'; 
+   var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl'; 
    createprimatives(url, function(duckei) {
    //console.log(duckei);
-    var dope = duckei;
-  //   console.log(dope);
-    callbackfn(dope);
+      callbackfn(duckei);
   });
 
-//  document.write(astring);
 }
 
 function myCallback(results) {
