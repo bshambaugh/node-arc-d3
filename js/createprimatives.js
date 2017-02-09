@@ -60,8 +60,9 @@ for(var i = 0; i < triples.length; i++) {
 }
 
 var primatives = {links: links, nodes: nodes};
-var JSONprimatives = JSON.stringify(primatives);
-return JSONprimatives;
+//var JSONprimatives = JSON.stringify(primatives);
+//return JSONprimatives;
+return primatives;
 }
 
 function link(source,target,value,label) {
