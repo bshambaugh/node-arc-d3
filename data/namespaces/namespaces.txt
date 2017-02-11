@@ -39,3 +39,6 @@
 @prefix as: 	<http://www.w3.org/ns/activitystreams#> .
 @prefix geo:    <https://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix vf:     <https://w3id.org/valueflows/> .
+@prefix isp:    <http://data.thespaceplan.com/isp#> .
+@prefix nasasc: <http://data.thespaceplan.com/schemas/nasaspacecraft#> .
+@prefix spman: <http://data.thespaceplan.com/spacemanifest/terms#> .
