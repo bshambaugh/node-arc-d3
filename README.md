@@ -2,4 +2,6 @@
 
 ![sm-node-d3-screenshot](/js/tests/sm-node-d3-screenshot.png)
 
+Run this by dropping in /var/www/html or whatever your Apache web root is
+
 #Based off of [Force Directed Graph with D3.js](https://bl.ocks.org/mbostock/4062045).
