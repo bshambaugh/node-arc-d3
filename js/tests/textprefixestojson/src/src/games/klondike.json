@@ -1,0 +1,13 @@
+{
+  "name":"klondike",
+  "description": "",
+  "instructions":"",
+  "pack": ["a23456789tjqk","cdhs"],
+  "deal": [1, 3],
+  "redeal": [{"1":3}, {"3":"infinite"}],
+  "rules":[
+    {"tableau": "color alternating descending"},
+    {"empty": "k"}
+  ],
+  "goal": "A-K by suit"
+}

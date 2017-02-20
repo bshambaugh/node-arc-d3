@@ -7,24 +7,13 @@
     "start": "node ./src/run-game.js",
     "test": "node jasmine-runner.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/codenorman/solitaire.git"
-  },
-  "keywords": [
-    "solitiare"
-  ],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/codenorman/solitaire/issues"
-  },
-  "homepage": "https://github.com/codenorman/solitaire#readme",
   "dependencies": {
     "lodash": "4.16.4"
   },
   "devDependencies": {
+    "fs": "0.0.1-security",
     "jasmine": "2.5.2",
-    "jasmine-spec-reporter": "2.7.0"
+    "jasmine-spec-reporter": "2.7.0",
+    "lodash": "^4.16.4"
   }
 }
