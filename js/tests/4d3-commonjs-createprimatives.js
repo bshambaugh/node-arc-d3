@@ -1,4 +1,5 @@
 var _ = require('../libraries/lodash.min.js') 
+/*
 var triples = [ [ 'http://localhost/node-arc-p5/data/Food-Growing-Methods.ttl',
     'http://purl.org/dc/terms/title',
     '"Food Growing Methods"' ],
@@ -23,7 +24,8 @@ var triples = [ [ 'http://localhost/node-arc-p5/data/Food-Growing-Methods.ttl',
   [ 'http://localhost/node-arc-p5/data/Food-Growing-Methods.ttl',
     'http://data.thespaceplan.com/ontologies/lsi#label',
     'http://investors.ddns.net:8080/marmotta/ldp/waypaver-lsi/habitation-infrastructure' ] ];
-// var triples = [["d", "i", "q"],["a", "f", "c"],["c", "g", "d"],["e", "h", "c"],["c", "i", "q"]];
+*/
+ var triples = [["d", "i", "q"],["a", "f", "c"],["c", "g", "d"],["e", "h", "c"],["c", "i", "q"]];
 var width = 400;
 var height = 400;
 
