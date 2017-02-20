@@ -1,0 +1,5 @@
+@prefix solid: 	<http://www.w3.org/ns/solid/terms#>
+@prefix xsd: 	<http://www.w3.org/2001/XMLSchema#>
+@prefix sioc: 	<http://rdfs.org/sioc/ns#>
+@prefix pingback: <http://purl.org/net/pingback/>
+@prefix as: 	<http://www.w3.org/ns/activitystreams#>

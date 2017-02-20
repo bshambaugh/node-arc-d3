@@ -1,0 +1,34 @@
+bibo 	http://purl.org/ontology/bibo/
+cc 	http://creativecommons.org/ns#
+dbp 	http://dbpedia.org/property/
+dbp-owl http://dbpedia.org/ontology/
+dbr 	http://dbpedia.org/resource/
+dc 	http://purl.org/dc/terms/
+ex 	http://example.org/
+foaf 	http://xmlns.com/foaf/0.1/
+owl 	http://www.w3.org/2002/07/owl#
+rdf 	http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdfa 	http://www.w3.org/ns/rdfa#
+rdfs 	http://www.w3.org/2000/01/rdf-schema#
+xhv 	http://www.w3.org/1999/xhtml/vocab#
+xsd 	http://www.w3.org/2001/XMLSchema#
+(fn  )(  )(  )http://www.w3.org/2005/xpath-functions
+(html  )(  )http://www.w3.org/1999/xhtml
+(rddl  )(  )http://www.rddl.org/
+(vc  )(  )(  )http://www.w3.org/2007/XMLSchema-versioning
+(xhtml  ) (http://www.w3.org/1999/xhtml  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )
+(xlink  ) http://www.w3.org/1999/xlink
+(xml  )(  ) http://www.w3.org/XML/1998/namespace
+(xs  )(  )(  )http://www.w3.org/2001/XMLSchema
+(xsi  )(  ) http://www.w3.org/2001/XMLSchema-instance
+(xsl  )(  ) http://www.w3.org/1999/XSL/Transform
+(wn20instances  )http://www.w3.org/2006/03/wn/wn20/instances/
+(org  )(  ) (http://www.w3.org/ns/org#  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )
+(gr  )(  )(  )(http://purl.org/goodrelations/v1#  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  ) 
+(skos  )(  )(http://www.w3.org/2004/02/skos/core#  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  ) 
+(vcard  ) (http://www.w3.org/2006/vcard/ns#  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  ) 
+owlTime (http://www.w3.org/2006/time#  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  )(  ) 
+owl: 	http://www.w3.org/2002/07/owl#
+(prov:  )(  )http://www.w3.org/ns/prov#
+schema: http://schema.org/
+(lsi:  )(  )http://data.thespaceplan.com/ontologies/lsi#

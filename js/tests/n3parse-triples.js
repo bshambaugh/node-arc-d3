@@ -5,8 +5,10 @@ parsedata(string, function(duck) {
 //    document.write(N3);
 //    console.log(N3);
 //    console.log(Object.getOwnPropertyNames(N3));
- //   console.log(duck);
+    console.log(duck);
     document.write(duck);
+    document.write('<br><br>');
+    document.write(duck[0][0]);
   });
 
 

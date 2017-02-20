@@ -1,5 +1,8 @@
 define(['lodash','n3lib','jquery'], function(_,N3,$) {
 
+// This should return an array of the form triples = ([[0][0],[0][1],[0][2]],[[1][0],[1][1],[1][2]],[[2][0],[2][1],[2][2]] etc
+// corresponding to data triples = ((subject,predicate,object),(subject2,predicate2,object2), (subject3,predicate3,object3) etc
+
 return function (string, fn) {
 var parser = N3.Parser();
 let triples = [];

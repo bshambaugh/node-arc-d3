@@ -1,0 +1,5 @@
+solid 	http://www.w3.org/ns/solid/terms#
+xsd 	http://www.w3.org/2001/XMLSchema#
+sioc 	http://rdfs.org/sioc/ns#
+pingback http://purl.org/net/pingback/
+as 	http://www.w3.org/ns/activitystreams#
