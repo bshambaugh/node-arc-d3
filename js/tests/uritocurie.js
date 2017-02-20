@@ -1,8 +1,12 @@
 //var _ = require('lodash');
 
+// This modifies the output of createprimatives.js by putting in str replacements
+
 var graph_object = {"links":[{"source":"http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl","target":"\"Food Growing Methods\"","value":1,"label":"http://purl.org/dc/terms/title"}],"nodes":[
 {"id":"http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl","group":1}],
 "nodes":[{"source":"http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl","target":"http://investors.ddns.net:8080/marmotta/ldp/waypaver-lsi/biological-support","value":1,"label":"http://data.thespaceplan.com/ontologies/lsi#label"}]};
+
+// output from textprefixestojson
 
 var replacements = [{ prefix: 'dcterms', uri: 'http://purl.org/dc/terms/' },
   { prefix: 'ex', uri: 'http://example.org/' },
