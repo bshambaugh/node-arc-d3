@@ -7,4 +7,8 @@ Run this by dropping in /var/www/html or whatever your Apache web root is
 # Program flowchart:
 
 ![d3-rdf-progam-flowpng-2](/js/tests/d3-rdf-progam-flowpng-2.png)
+
+Sketch of what Triple Modications might do.
+![msm-node-d3-screenshot](/js/tests/msm-node-d3-screenshot.png)
+
 #Based off of [Force Directed Graph with D3.js](https://bl.ocks.org/mbostock/4062045).
