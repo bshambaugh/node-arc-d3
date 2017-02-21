@@ -38,8 +38,6 @@ function reportlongstring(triples,replacements) {
   var matchesuri = [];
   for(var i = 0; i < triples.length; i++) {
     for(var j = 0; j < 3; j++) {
-
-       // replace strings greater than 30 characters
        var re = /'.*'|".*"|""".*"""/ig;
        var matches_array = triples[i][j].match(re);
        if(matches_array !== null && matches_array[0].length > 30) {
@@ -47,23 +45,35 @@ function reportlongstring(triples,replacements) {
             longstrings.push({match: matches_array[0], replacement: triples[i][j]});
        }
 
-
-        // Replace URIs with curies
+   /*
+       var re2 = new RegExp('http://data.thespaceplan.com/ontologies/lsi#label', "ig");
+       var found = triples[i][j].match(re2);
+       if(found !== null) {i
+          console.log('what is the found: ' + found);
+       }
+   */  //   if(tocurie(triples[i][j],replacements) !== null) {
+          //  console.log(tocurie(triples[i][j],replacements));
            var name =  tocurie(triples[i][j],replacements);
+         //  console.log(name.string + ' ' + name.matches);
 
            var exists = false;
-          
+         //   console.log(name.matches);
+         //   console.log('name matchces' + name.matches);
+         //   console.log('name matches' + name.matches + 'array length:' + name.matches.length);
             if(name.matches.length > 0) {
                   triples[i][j] = name.string;
                if(matchesuri.length > 0) {
+                // console.log('hola ' + matchesuri[0].uri + ' ' + name.matches[0].uri);
                  for(var k = 0; k < matchesuri.length; k++) {
                     if(name.matches[0].uri === matchesuri[k].uri) {
+                    //   matchesuri.push(name.matches[0]);
                        var exists = true;
                     }
                  }
 
                  if(!exists) {
                     matchesuri.push(name.matches[0]);
+                   // console.log(exists);
                     exists = false;
                  }
                  
@@ -71,6 +81,7 @@ function reportlongstring(triples,replacements) {
                matchesuri.push(name.matches[0]);
                }             
             }           
+         //  }
     }
   }
        return {triples: triples, longstrings: longstrings, replacements: matchesuri};
@@ -84,6 +95,7 @@ function tocurie(string,replacements) {
      var re = new RegExp(replacements[i].uri, "ig");
      var found = string.match(re);
      if(found !== null) {
+     //   console.log('matches: ' + found + ' ' + replacements[i].uri + ' ' + replacements[i].prefix);
         matches.push({prefix: replacements[i].prefix, uri: replacements[i].uri});
       }
       var new_graph_object = string.replace(re,replacements[i].prefix +':');
@@ -92,6 +104,7 @@ function tocurie(string,replacements) {
 
 
   if(matches !== null) {
+   //   return {matches: matches};
       return {string: string, matches: matches};
   } else {
      return null;

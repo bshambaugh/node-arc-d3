@@ -4,4 +4,7 @@
 
 Run this by dropping in /var/www/html or whatever your Apache web root is
 
+# Program flowchart:
+
+![d3-rdf-progam-flowpng-2](/js/tests/d3-rdf-progam-flowpng-2.png)
 #Based off of [Force Directed Graph with D3.js](https://bl.ocks.org/mbostock/4062045).
