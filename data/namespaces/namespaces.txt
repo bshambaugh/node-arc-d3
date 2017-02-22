@@ -59,4 +59,5 @@
 @prefix ldif:	<http://www.w3.org/2007/ont/ldif#> .
 @prefix gen: <http://www.w3.org/2006/gen/ont#> .
 @prefix dce: <http://purl.org/dc/elements/1.1/> .
-@prefix cert: <http://www.w3.org/ns/auth/cert#> .  
+@prefix cert: <http://www.w3.org/ns/auth/cert#> . 
+@prefix ical: <http://www.w3.org/2002/12/cal/ical#> . 
