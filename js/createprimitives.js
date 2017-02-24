@@ -9,6 +9,7 @@ var replacements = [{ prefix: 'dcterms', uri: 'http://purl.org/dc/terms/' },
   { prefix: 'ex', uri: 'http://example.org/' },
   { prefix: 'foaf', uri: 'http://xmlns.com/foaf/0.1/' },
   { prefix: 'owl', uri: 'http://www.w3.org/2002/07/owl#' },
+  { prefix:  'rdfs', uri: 'http://www.w3.org/2000/01/rdf-schema#' } ,
   { prefix: 'lsi', uri: 'http://data.thespaceplan.com/ontologies/lsi#' }];
  
 return function (url, fn) {
@@ -21,8 +22,8 @@ return function (url, fn) {
   parsetriples(string_3, function(duck) {
       // console.log(constructPrimatives(tripleModifications.tripleModifications(duck, replacements).triples));
       // var primatives = constructPrimatives(duck);
-       var primatives = constructPrimatives(triplemodifications(duck, replacements).triples)
-       fn(primatives);
+       var primitives = constructPrimitives(triplemodifications(duck, replacements).triples)
+       fn(primitives);
   });
 
 
@@ -31,7 +32,7 @@ return function (url, fn) {
 };
 
 
-function constructPrimatives(triples) {
+function constructPrimitives(triples) {
 //subject array
 var subjects = [];
 //object array
@@ -72,10 +73,10 @@ for(var i = 0; i < triples.length; i++) {
      links.push(new link(source,target,value,triples[i][1]));
 }
 
-var primatives = {links: links, nodes: nodes};
+var primitives = {links: links, nodes: nodes};
 //var JSONprimatives = JSON.stringify(primatives);
 //return JSONprimatives;
-return primatives;
+return primitives;
 }
 
 function link(source,target,value,label) {

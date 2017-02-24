@@ -1,9 +1,9 @@
-define(['d3','jquery','createprimatives'], function(d3,$,createprimatives) { 
+define(['d3','jquery','createprimitives'], function(d3,$,createprimitives) { 
  var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
 
 function longProcess(callbackfn) {
    var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl'; 
-   createprimatives(url, function(innercallbackfn) {
+   createprimitives(url, function(innercallbackfn) {
    //console.log(duckei);
       callbackfn(innercallbackfn);
   });
