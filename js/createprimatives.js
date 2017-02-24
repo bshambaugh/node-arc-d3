@@ -1,9 +1,15 @@
-define(['lodash','jquery','parsetriples'], function(_,$,parsetriples) {
+define(['lodash','jquery','parsetriples','triplemodifications'], function(_,$,parsetriples,triplemodifications) {
 
 // Input:
 //  var triples = [["d", "i", "q"],["a", "f", "c"],["c", "g", "d"],["e", "h", "c"],["c", "i", "q"]];
 // Output:
 // {"links":[{"source":"d","target":"q","value":1,"label":"i"},{"source":"a","target":"c","value":1,"label":"f"},{"source":"c","target":"d","value":1,"label":"g"},{"source":"e","target":"c","value":1,"label":"h"},{"source":"c","target":"q","value":1,"label":"i"}],"nodes":[{"id":"a","group":1},{"id":"c","group":1},{"id":"d","group":1},{"id":"e","group":1},{"id":"q","group":1}]}
+
+var replacements = [{ prefix: 'dcterms', uri: 'http://purl.org/dc/terms/' },
+  { prefix: 'ex', uri: 'http://example.org/' },
+  { prefix: 'foaf', uri: 'http://xmlns.com/foaf/0.1/' },
+  { prefix: 'owl', uri: 'http://www.w3.org/2002/07/owl#' },
+  { prefix: 'lsi', uri: 'http://data.thespaceplan.com/ontologies/lsi#' }];
  
 return function (url, fn) {
   $.get(url, function(data) {
@@ -13,7 +19,9 @@ return function (url, fn) {
      var string_3 = string_2.replace(/<>/ig,'<'+url+'>');
 
   parsetriples(string_3, function(duck) {
-       var primatives = constructPrimatives(duck);
+      // console.log(constructPrimatives(tripleModifications.tripleModifications(duck, replacements).triples));
+      // var primatives = constructPrimatives(duck);
+       var primatives = constructPrimatives(triplemodifications(duck, replacements).triples)
        fn(primatives);
   });
 

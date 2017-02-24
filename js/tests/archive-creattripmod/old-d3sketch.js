@@ -1,4 +1,4 @@
-define(['d3','jquery','solo-createprimatives'], function(d3,$,createprimatives) { 
+define(['d3','jquery','createprimatives'], function(d3,$,createprimatives) { 
  var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
 
 function longProcess(callbackfn) {
