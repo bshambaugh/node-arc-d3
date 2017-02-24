@@ -9,7 +9,9 @@
      <script data-main="js/config" src="js/libraries/require.js"></script>
     <script>alert('before require keyword');</script> 
      <script>
-     require(['config','parsetriples','triplemodifications','createprimatives'], function(parsetriples,triplemodifications,createprimatives) {
+//     require(['config','parsetriples','triplemodifications','createprimatives'], function(parsetriples,triplemodifications,createprimatives) {
+     require(['config','parsetriples','solo-triplemodifications','solo-createprimatives'], function(parsetriples,triplemodifications,createprimatives) {
+
         // all of your code here
 //        alert();
 //        alert('after require keyword');
@@ -20,7 +22,7 @@
 //          }); 
 //             require(['calling-createprimatives'])
           //    require(['d3sketch'])
-              require(['call-triplemodifications'])
+              require(['call-solo-createprimatives'])
 //                require(['createprimatives'])
 //              require(['callparsedtriples'])            
 //             require(['tests/n3parse-triples'])
