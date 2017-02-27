@@ -109,6 +109,11 @@ function tocurieother(string, replacements, currentbaseURI, baseURIs) {
 // look for intersections with replacements ... // replace with the toCurie argument...
 // add currentURI to baseURIs
 // replacements and baseURIs need to be JSON files stored that can be added to...
+//tocurie(for baseURIs)
+//tocurie(for currentbaseURI)  ... except this is not a string... eek...perhaps add currentbaseURI to baseURI them
+// run tocurie??
+// inherit base the order of precedence...given in section 5 of https://www.ietf.org/rfc/rfc3986.txt
+// but for now left currentbaseURI be url...
 
 }
 
