@@ -32,7 +32,7 @@
 @prefix prov:    <http://www.w3.org/ns/prov#> .
 @prefix schema: <http://schema.org/> .
 @prefix lsi:    <http://data.thespaceplan.com/ontologies/lsi#> .
-@prefix solid: 	<http://www.w3.org/ns/solid/terms#> .
+@prefix solid-terms: 	<http://www.w3.org/ns/solid/terms#> .
 @prefix xsd: 	<http://www.w3.org/2001/XMLSchema#> .
 @prefix sioc: 	<http://rdfs.org/sioc/ns#> .
 @prefix pingback: <http://purl.org/net/pingback/> .
@@ -60,4 +60,7 @@
 @prefix gen: <http://www.w3.org/2006/gen/ont#> .
 @prefix dce: <http://purl.org/dc/elements/1.1/> .
 @prefix cert: <http://www.w3.org/ns/auth/cert#> . 
-@prefix ical: <http://www.w3.org/2002/12/cal/ical#> . 
+@prefix ical: <http://www.w3.org/2002/12/cal/ical#> .
+@prefix posix-stat: <http://www.w3.org/ns/posix/stat#> .
+@prefix pim-space: <http://www.w3.org/ns/pim/space#> .
+ 
