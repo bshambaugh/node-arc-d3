@@ -29,31 +29,48 @@ var triples = [ [ 'http://localhost/node-arc-p5/data/Food-Growing-Methods.ttl',
     'http://data.thespaceplan.com/ontologies/lsi#label',
     'http://investors.ddns.net:8080/marmotta/ldp/waypaver-lsi/habitation-infrastructure' ] ];
 
-console.log(tripleModifications(triples, replacements));
+var baseURIs = [];
 
+var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
 
-function tripleModifications(triples, replacements) {
+//var tripleslocal = triples.map(function(x) { return x; });
+
+//console.log(tripleslocal);
+
+console.log(tripleModifications(triples, replacements, url, baseURIs));
+
+console.log(tocurieother(tripleModifications(triples, replacements, url, baseURIs).triples));
+
+console.log(triples);
+
+console.log(tripleModifications(triples, replacements, url, baseURIs).triples);
+//console.log(tripleslocal);
+// this function should avoid side effects on triples...
+function tripleModifications(triples, replacements, currentbaseURI, baseURIs) {
    var longstrings = [];
   var matchesuri = [];
-  for(var i = 0; i < triples.length; i++) {
+  var triplesclone = triples.map(function(arr) {
+    return arr.slice(0);
+  });
+  for(var i = 0; i < triplesclone.length; i++) {
     for(var j = 0; j < 3; j++) {
 
        // replace strings greater than 30 characters
        var re = /'.*'|".*"|""".*"""/ig;
-       var matches_array = triples[i][j].match(re);
+       var matches_array = triplesclone[i][j].match(re);
        if(matches_array !== null && matches_array[0].length > 30) {
-            triples[i][j] = matches_array[0].substr(0,30) + '...';
-            longstrings.push({match: matches_array[0], replacement: triples[i][j]});
+            triplesclone[i][j] = matches_array[0].substr(0,30) + '...';
+            longstrings.push({match: matches_array[0], replacement: triplesclone[i][j]});
        }
 
 
         // Replace URIs with curies
-           var name =  tocurie(triples[i][j],replacements);
+           var name =  tocurie(triplesclone[i][j],replacements);
 
            var exists = false;
           
             if(name.matches.length > 0) {
-                  triples[i][j] = name.string;
+                  triplesclone[i][j] = name.string;
                if(matchesuri.length > 0) {
                  for(var k = 0; k < matchesuri.length; k++) {
                     if(name.matches[0].uri === matchesuri[k].uri) {
@@ -74,10 +91,16 @@ function tripleModifications(triples, replacements) {
         // Replace main namespace (special case: baseURI) and strings starting with http
         // refer to the rules of section 5.1 RFC3986: https://www.ietf.org/rfc/rfc3986.txt
         // allow multiple base URIs...
-          
+
+      /*         
+       // console.log "return the triples"
+          console.log('print the triples');
+          console.log(triples);
+          console.log('end the triples');
+      */
     }
   }
-       return {triples: triples, longstrings: longstrings, replacements: matchesuri};
+       return {triples: triplesclone, longstrings: longstrings, replacements: matchesuri};
 }
 
 
@@ -108,12 +131,21 @@ function tocurieother(string, replacements, currentbaseURI, baseURIs) {
 // look for intersections of the currentbaseURI with the baseURIs ...
 // look for intersections with replacements ... // replace with the toCurie argument...
 // add currentURI to baseURIs
+// I need to check whether h is undefined
 // replacements and baseURIs need to be JSON files stored that can be added to...
 //tocurie(for baseURIs)
 //tocurie(for currentbaseURI)  ... except this is not a string... eek...perhaps add currentbaseURI to baseURI them
 // run tocurie??
 // inherit base the order of precedence...given in section 5 of https://www.ietf.org/rfc/rfc3986.txt
 // but for now left currentbaseURI be url...
+
+// convert all undefined namespaces to ns0, ns1, ns2, etc...
+ 
+   for(var i = 0; i < triples.length; i++) {
+       for(var j = 0; j < 3; j++) {
+           console.log('the modified triples : '+triples[i][j]);
+        }
+    }
 
 }
 
