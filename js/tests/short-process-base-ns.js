@@ -42,17 +42,6 @@ var baseURIs = [{prefix: 'base1' , uri: 'http://dogbone.org'},
                 {prefix: 'base2' , uri: 'http://penguin.org'}];
 
 var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
-//var url = 'http://giraffe.org';
-
-
-console.log(newtriples.replacements);
-
-console.log(baseExtraction.extracturi({ prefix: 'dcterms', uri: 'http://purl.org/dc/terms/' }));
 
 var bases = baseExtraction.addBases(url,baseURIs);
-// print the last base that you added...or the one that matches the uri for the present base...
-//console.log(bases[bases.length - 1].prefix);
-//console.log(bases[bases.length - 1].uri);
-console.log(bases.baseURIs);
-console.log('the bases result');
 console.log(bases);

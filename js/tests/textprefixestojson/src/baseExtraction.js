@@ -1,13 +1,13 @@
 var _ = require('lodash');
 //var baseURIs = ['base1','base2','base3'];
 
-
+/*
 var baseURIs = [{prefix: 'base1' , uri: 'http://dogbone.org'},
                 {prefix: 'base3' , uri: 'http://giraffe.org'},
                 {prefix: 'base2' , uri: 'http://penguin.org'}]
+*/
 
-
-console.log(_.find(baseURIs, { uri: 'http://dogbone.org'}));
+//console.log(_.find(baseURIs, { uri: 'http://dogbone.org'}));
 /*
 //var baseURIs = [];
 
@@ -150,19 +150,24 @@ function findPrefix2(currentbaseURI) {
 }
 */
 
-
 module.exports = {
 
    findPrefix: function(currentbaseURI) {
-    if(currentbaseURI.match(/^.*:\/\/.*#/) !== null) {
-       return currentbaseURI.match(/^.*:.*#/)[0];
-    } else {
-      if (currentbaseURI.match(/^.*:\/\/.*\//) !==null) {
-        return currentbaseURI.match(/^.*:\/\/.*\//)[0];
+      let re = /.*:\/\/.*/i;
+      let found = currentbaseURI.match(re);     
+    if(found !== null) {
+      if(currentbaseURI.match(/^.*:\/\/.*#/) !== null) {
+         return currentbaseURI.match(/^.*:.*#/)[0];
       } else {
-        return currentbaseURI;
+        if (currentbaseURI.match(/^.*:\/\/.*\//) !==null) {
+          return currentbaseURI.match(/^.*:\/\/.*\//)[0];
+       } else {
+          return currentbaseURI;
+       }
       }
-    }
+    } else {
+      return found;
+    } 
   },
 
   addBases: function(currentbaseURI, baseURIs) {
@@ -189,6 +194,63 @@ module.exports = {
       return {baseURIs: baseURIs, currentbase: local};
     }
   },
+
+ addns: function(currentnsURI, nsURIs) {
+   let h = _.maxBy(nsURIs, function(o) {return o.prefix})
+   let n = 1;
+for(var k = 0; k < currentnsURI.length; k++) {
+   let currentns = this.findPrefix(currentnsURI[k]);
+//   console.log(currentns);
+   if(h !== undefined) {
+      if (_.includes(_.map(nsURIs, this.extracturi),currentns) !== true) {
+        let h = _.maxBy(nsURIs, function(o) {return o.prefix})
+        var numz = h.prefix.match(/[0-9]/);
+        var local = { prefix: 'ns'+(parseInt(numz[0],10) + 1), uri: currentns};
+        nsURIs.push(local);
+       } else {
+         // push the currentbaseURI prefix...
+       var local = _.find(nsURIs, { uri: currentns})
+  /*   
+      if(baseURI.uri === currentbase) {
+            return baseURI.prefix;
+         } 
+         var local = { prefix: 'base1', uri: currentbase }; */
+       }
+  //   console.log(nsURIs);
+    //  return {nsURIs: nsURIs};
+    } else {
+      var local = { prefix: 'ns'+n, uri: currentns};
+      nsURIs.push(local);
+      n = n + 1;
+//    console.log(nsURIs);
+    //  return {nsURIs: nsURIs};
+    }
+  }
+  return {nsURIs: nsURIs};
+},
+
+  extractNamespace: function(triples,nsURIs) {
+    var remainderURIs = [];
+ //   var namespaces = [];
+    for(var i = 0; i < triples.length; i++) {
+    for(var j = 0; j < 3; j++) {
+      var curify = this.findPrefix(triples[i][j]);
+        if(curify !== null) {
+         remainderURIs.push(curify);
+        }
+     }
+  }
+  var names = _.uniq(remainderURIs);
+ // for(var k = 0; k < names.length; k++) {
+//    var bases = this.addns(names[k],nsURIs);
+//    var bases = this.addns(names[0],nsURIs);
+//    namespaces.push(bases);
+//  }
+//  return namespaces;
+//    return bases;
+    return names;
+},
+
 
   extracturi: function(n) {
     return n.uri;

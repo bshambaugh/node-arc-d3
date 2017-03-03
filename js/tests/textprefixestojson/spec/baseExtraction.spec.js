@@ -14,6 +14,10 @@ describe('add prefixes : ', function () {
      expect(baseExtraction.findPrefix('http://something-foo')).toEqual('http://something-foo');
   });
 
+    it('this should return null if it is not in the form of a URI', function () {
+     expect(baseExtraction.findPrefix('foo')).toEqual(null);
+  });
+
 });
 
 describe('extract bases : ', function() {
@@ -51,4 +55,16 @@ describe('extract URI from baseURI object', function() {
    it('this should extract a URI from the baseURI object', function() {
        expect(baseExtraction.extracturi({prefix: 'base1' , uri: 'http://dogbone.org'})).toEqual('http://dogbone.org');
    });
+});
+
+describe('Create namespaces for other URIs', function() {
+  
+   it('this should return one namespaces when fed them', function() {
+       expect(baseExtraction.extractNamespace([['http://elephant.org','hody','giraffe']],[]).nsURIs).toEqual([{ prefix: 'ns1', uri: 'http://elephant.org' }]);
+   });
+
+      it('this should return one namespaces when fed them', function() {
+       expect(baseExtraction.extractNamespace([['http://elephant.org','hody','giraffe'],['http://monkey.org','hody','giraffe']],[]).nsURIs).toEqual([{ prefix: 'ns1', uri: 'http://elephant.org' },{ prefix: 'ns2', uri: 'http://monkey.org' }]);
+   });
+
 });
