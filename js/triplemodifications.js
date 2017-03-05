@@ -1,69 +1,31 @@
-define([], function() {
+define(['libraries/fn_triplemodifications'],function(tmfn) {
 
-return function (triples, replacements) {
-   var longstrings = [];
-  var matchesuri = [];
-  for(var i = 0; i < triples.length; i++) {
-    for(var j = 0; j < 3; j++) {
+return function (triples, replacements, nsURIs, baseURIs) {
+var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
 
-       // replace strings greater than 30 characters
-       var re = /'.*'|".*"|""".*"""/ig;
-       var matches_array = triples[i][j].match(re);
-       if(matches_array !== null && matches_array[0].length > 30) {
-            triples[i][j] = matches_array[0].substr(0,30) + '...';
-            longstrings.push({match: matches_array[0], replacement: triples[i][j]});
-       }
+// create an array with strings shortened (substitution list one)
+var shortenstrings = tmfn.replacelongstrings(triples);
 
+// create an array with the prefixes replaced (substitution list two)
+var replaceprefix = tmfn.replacewithcuries(shortenstrings.triples,replacements);
 
-        // Replace URIs with curies
-           var name =  tocurie(triples[i][j],replacements);
+var bases = tmfn.addBases(url,baseURIs);
 
-           var exists = false;
-          
-            if(name.matches.length > 0) {
-                  triples[i][j] = name.string;
-               if(matchesuri.length > 0) {
-                 for(var k = 0; k < matchesuri.length; k++) {
-                    if(name.matches[0].uri === matchesuri[k].uri) {
-                       var exists = true;
-                    }
-                 }
+// create an array with the bases replaced (substitution list three)
+var basesreplaced = tmfn.replacewithcuries(replaceprefix.triples,bases.baseURIs);
 
-                 if(!exists) {
-                    matchesuri.push(name.matches[0]);
-                    exists = false;
-                 }
-                 
-               } else {
-               matchesuri.push(name.matches[0]);
-               }             
-            }           
-    }
-  }
-       return {triples: triples, longstrings: longstrings, replacements: matchesuri};
-}
+var nams = tmfn.addns(tmfn.extractNamespace(basesreplaced.triples),nsURIs);
 
+var namsreplaced = tmfn.replacewithcuries(basesreplaced.triples,nams.nsURIs);
 
-function tocurie(string,replacements) {
-  var matches = [];
-
-  for(var i = 0; i < replacements.length; i++) {
-     var re = new RegExp(replacements[i].uri, "ig");
-     var found = string.match(re);
-     if(found !== null) {
-        matches.push({prefix: replacements[i].prefix, uri: replacements[i].uri});
-      }
-      var new_graph_object = string.replace(re,replacements[i].prefix +':');
-      var string = new_graph_object;
-  }
-
-
-  if(matches !== null) {
-      return {string: string, matches: matches};
-  } else {
-     return null;
-  }
-
+// Add the replacements from replacebases
+Array.prototype.push.apply(namsreplaced.replacements,basesreplaced.replacements);
+// Add replacements from replaceprefixes
+Array.prototype.push.apply(namsreplaced.replacements,replaceprefix.replacements);
+// Add long strings 
+namsreplaced.longstrings = shortenstrings.longstrings;
+return namsreplaced;
+  
 }
 
 });

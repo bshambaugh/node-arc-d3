@@ -4,6 +4,13 @@ define(['lodash','jquery','parsetriples','triplemodifications'], function(_,$,pa
 //  var triples = [["d", "i", "q"],["a", "f", "c"],["c", "g", "d"],["e", "h", "c"],["c", "i", "q"]];
 // Output:
 // {"links":[{"source":"d","target":"q","value":1,"label":"i"},{"source":"a","target":"c","value":1,"label":"f"},{"source":"c","target":"d","value":1,"label":"g"},{"source":"e","target":"c","value":1,"label":"h"},{"source":"c","target":"q","value":1,"label":"i"}],"nodes":[{"id":"a","group":1},{"id":"c","group":1},{"id":"d","group":1},{"id":"e","group":1},{"id":"q","group":1}]}
+// baseURIs and nsURIs defined like replacements in textprefixestojson
+var baseURIs = [ { prefix: 'base1', uri: 'http://dogbone.org' },
+  { prefix: 'base3', uri: 'http://giraffe.org' },
+  { prefix: 'base2', uri: 'http://penguin.org' },
+  { prefix: 'base4', uri: 'http://localhost/node-arc-d3/data/' } ];
+
+var nsURIs = [];
 
 var replacements = [{ prefix: 'dcterms', uri: 'http://purl.org/dc/terms/' },
   { prefix: 'ex', uri: 'http://example.org/' },
@@ -22,7 +29,8 @@ return function (url, fn) {
   parsetriples(string_3, function(duck) {
       // console.log(constructPrimatives(tripleModifications.tripleModifications(duck, replacements).triples));
       // var primatives = constructPrimatives(duck);
-       var primitives = constructPrimitives(triplemodifications(duck, replacements).triples)
+//       var primitives = constructPrimitives(triplemodifications(duck, replacements).triples)
+      var primitives = constructPrimitives(triplemodifications(duck, replacements, nsURIs, baseURIs).triples);
        fn(primitives);
   });
 
