@@ -1,0 +1,36 @@
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix context: <http://localhost:8080/marmotta/context/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix usps: <http://www.w3.org/2000/10/swap/pim/usps#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dsbase: <http://data.nasa.gov/resource/> .
+@prefix ods: <http://open-data-standards.github.com/2012/01/open-data-standards#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ds: <http://data.nasa.gov/resource/gvk9-iz74/> .
+@prefix socrata: <http://www.socrata.com/rdf/terms#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix wn: <http://xmlns.com/wordnet/1.6/> .
+@prefix lang: <http://purl.org/net/inkel/rdf/schemas/lang/1.1#> .
+@prefix contact: <http://www.w3.org/2000/10/swap/pim/contact#> .
+@prefix uranai: <http://kota.s12.xrea.com/vocab/uranai> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rss: <http://purl.org/rss/1.0/> .
+@prefix air: <http://www.megginson.com/exp/ns/airports#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix dcterms: <http://purl.org/dc/terms/isPartOf> .
+@prefix schema: <https://schema.org> .
+
+<http://localhost:8080/marmotta/ldp/itsjustsomegirl> a <http://www.w3.org/ns/ldp#Resource> , <http://www.w3.org/ns/ldp#RDFSource> ;
+	<http://www.w3.org/ns/ldp#interactionModel> <http://www.w3.org/ns/ldp#Container> ;
+	a <http://www.w3.org/ns/ldp#Container> , <http://www.w3.org/ns/ldp#BasicContainer> ;
+	dct:created "2016-04-24T10:33:11.000-04:00"^^xsd:dateTime ;
+	dct:title "In honor of Carrie Olson" ;
+	foaf:primaryTopic <http://localhost:8080/marmotta/ldp/itsjustsomegirl#me> ;
+	dct:modified "2016-04-24T10:38:43.000-04:00"^^xsd:dateTime .

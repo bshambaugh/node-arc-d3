@@ -1,7 +1,7 @@
 define(['libraries/fn_triplemodifications'],function(tmfn) {
 
-return function (triples, replacements, nsURIs, baseURIs) {
-var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
+return function (triples, replacements, nsURIs, baseURIs, url) {
+//var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
 
 // create an array with strings shortened (substitution list one)
 var shortenstrings = tmfn.replacelongstrings(triples);

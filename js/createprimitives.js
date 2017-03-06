@@ -25,12 +25,16 @@ return function (url, fn) {
      var string = data.toString();
      var string_2 = string.replace(/'/ig,'\\\'');
      var string_3 = string_2.replace(/<>/ig,'<'+url+'>');
+     // prepare extra data to pass to parse triples..
+     var dummy = [];
+     dummy.push(string_3);
+     dummy.push(url);
 
-  parsetriples(string_3, function(duck) {
+  parsetriples(dummy, function(duck) {
       // console.log(constructPrimatives(tripleModifications.tripleModifications(duck, replacements).triples));
       // var primatives = constructPrimatives(duck);
 //       var primitives = constructPrimitives(triplemodifications(duck, replacements).triples)
-      var primitives = constructPrimitives(triplemodifications(duck, replacements, nsURIs, baseURIs).triples);
+      var primitives = constructPrimitives(triplemodifications(duck, replacements, nsURIs, baseURIs,dummy[1]).triples);
        fn(primitives);
   });
 

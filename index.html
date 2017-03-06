@@ -10,7 +10,7 @@
     <script>alert('before require keyword');</script> 
      <script>
 //     require(['config','parsetriples','triplemodifications','createprimatives'], function(parsetriples,triplemodifications,createprimatives) {
-     require(['config','parsetriples','triplemodifications','createprimitives'], function(parsetriples,triplemodifications,createprimitives) {
+     require(['config','parsetriples','triplemodifications','libraries/fn_triplemodifications','createprimitives'], function(parsetriples,triplemodifications,fn_triplemodifications,createprimitives) {
 
         // all of your code here
 //        alert();
@@ -20,8 +20,10 @@
 //          require(['createprimatives'], function() {
 //             require(['tests/call-create-primatives-tests'])             
 //          }); 
-//             require(['calling-createprimatives'])
-              require(['d3sketch'])
+//              require(['calling-createprimatives'])
+//                require(['call-fnt'])
+                 require(['d3sketch'])
+//                require(['call-tmf'])
 //              require(['call-solo-createprimatives'])
 //                require(['createprimatives'])
 //              require(['callparsedtriples'])            
