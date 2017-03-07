@@ -1,0 +1,2 @@
+curl http://localhost:8080/marmotta/sparql/select?query=SELECT%20*%20WHERE%20%7B%20?subject%20?property%20?object%20%7D%20LIMIT%2020
+
