@@ -31,10 +31,11 @@ function draw(width,height,graph) {
   var color = d3.scaleOrdinal(d3.schemeCategory20);
 
   var simulation = d3.forceSimulation()
-    .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(300).strength(0.5))
- //   .force("link", d3.forceLink().id(function(d) { return d.id; }))
+//    .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(300).strength(0.5))
+    .force("link", d3.forceLink().id(function(d) { return d.id; }))
     .force("charge", d3.forceManyBody())
-    .force("center", d3.forceCenter(width / 2, height / 2));
+    .force("center", d3.forceCenter(width / 2, height / 2))
+    .force("collide", d3.forceCollide(60));
 
   var link = svgContainer.append("g")
       .attr("class", "links")
@@ -62,11 +63,11 @@ function draw(width,height,graph) {
       .attr("class", "nodes")
     .selectAll("circle")
     .data(graph.nodes)
-    .enter().append("circle")
-      .attr("r", 5)
- //     .enter().append("ellipse")
-//      .attr("rx", 60)
-//      .attr("ry", 15)
+//    .enter().append("circle")
+//      .attr("r", 5)
+       .enter().append("ellipse")
+       .attr("rx", function(d) { return d.id.length * 4 })
+       .attr("ry", 15)
       .attr("fill", function(d) { return color(d.group); })
       .call(d3.drag()
           .on("start", dragstarted)
