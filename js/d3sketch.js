@@ -59,7 +59,8 @@ function draw(width,height,graph) {
                     .attr("font-size","10px")
                     .attr("fill","black");
 
- 
+
+/* 
     var linknodes = svgContainer.append("g")
           .attr("class","nodes")
           .selectAll("circle")
@@ -75,7 +76,7 @@ function draw(width,height,graph) {
             .on("start", dragstarted)
             .on("drag", dragged)
             .on("end", dragended));
-
+*/
 
 
   var nodevar = svgContainer.append("g")
@@ -135,10 +136,11 @@ function draw(width,height,graph) {
        
     // extended with link labels
 
+/*
     linknodes
         .attr("cx", function(d) { return (d.source.x + d.target.x)/2; })
         .attr("cy", function(d) { return (d.source.y + d.target.y)/2; });
-
+*/
 
     linklabels
         .attr("x", function(d) { return (d.source.x + d.target.x)/2; })
