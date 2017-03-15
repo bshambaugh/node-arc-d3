@@ -69,12 +69,13 @@ function draw(width,height,graph) {
    //      .enter().append("ellipse")
      //     .attr("rx", function(d) { return d.label.length * 4 })
      //     .attr("ry", 15)
-          .style("fill", d3.color("red"))
+ //        .call(howdy,d.cx)
+      //    .attr("cy", function(d){ return d.y;})
+      //    .attr("cx", function(d){ return d.x;})
+          .style("fill", d3.color("red"));
+       //   .get(node)
+       //   .call(howdy,("position", function(d){ return d.cx;}));
         //  .style("opacity", 0.00);
-          .call(d3.drag()
-            .on("start", dragstarted)
-            .on("drag", dragged)
-            .on("end", dragended));
 
 
 
@@ -115,16 +116,21 @@ function draw(width,height,graph) {
                     .attr("fill","black")
                     .attr("text-anchor", "middle");
 
+
    nodevar.append("title")
       .text(function(d) { return d.id; });
 
   simulation
-    .nodes(graph.nodes) 
+    .nodes(graph.nodes,linknodes) 
     .on("tick", ticked);
 
   simulation.force("link")
       .links(graph.links);
 
+/*
+  simulation.force("collide")
+      .nodes(linknodes);
+*/
 
   function ticked() {
     link
@@ -153,9 +159,24 @@ function draw(width,height,graph) {
      nodelabels
         .attr("x", function(d) { return d.x; })
         .attr("y", function(d) { return d.y; });
-
+/*
+     circle
+      .each(cluster(10 * e.alpha * e.alpha))i
+      .each(collide(60))
+      .attr("cx", function(d) { return d.x; })
+      .attr("cy", function(d) { return d.y; });
+*/
   }
 
+/*
+  function ticker(e) {
+  circle
+      .each(cluster(10 * e.alpha * e.alpha))
+      .each(collide(.5))
+      .attr("cx", function(d) { return d.x; })
+      .attr("cy", function(d) { return d.y; });
+}
+*/
 
   function dragstarted(d) {
   if (!d3.event.active) simulation.alphaTarget(0.3).restart();
@@ -174,6 +195,14 @@ function dragended(d) {
   d.fy = null;
 }
 
+/*
+function howdy(selection,d) {
+  console.log('howdy');
+//  d.fx = d.cx;
+//  console.log(d.fx);
+   console.log(d);
+}
+*/
 
 };
 
