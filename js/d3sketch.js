@@ -1,8 +1,10 @@
 define(['d3','jquery','createprimitives'], function(d3,$,createprimitives) { 
- var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
+// var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
+var url = 'http://localhost/node-arc-d3/data/all_vf.ttl';
 
 function longProcess(callbackfn) {
-   var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl'; 
+//   var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl'; 
+   var url = 'http://localhost/node-arc-d3/data/all_vf.ttl'; 
    createprimitives(url, function(innercallbackfn) {
    //console.log(duckei);
       callbackfn(innercallbackfn);

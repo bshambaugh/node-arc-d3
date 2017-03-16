@@ -1,0 +1,65 @@
+<!-- Modified` http://docs.publishmydata.com/developers/270_example_using_javascript_to_request_data_from_sparql_endpoint.html -->
+<!DOCTYPE html>
+<html>
+	<head>
+                <script src="../../libraries/jquery-3.1.1.min.js"></script>
+                <script src="../../libraries/bun2-exportN3.js"></script>
+<!--		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
+	</head>
+	<body>
+               <script type="text/javascript">
+function parsedata(string, fn) {
+var parser = N3.Parser();
+let triples = [];
+parser.parse(string,
+
+             function (error, triple, prefixes) {
+               if (triple) {
+               //  console.log(triple.subject, triple.predicate, triple.object, '.');
+                   let subject = triple.subject;
+                   let predicate = triple.predicate;
+                   let object = triple.object;
+                  triples.push([subject, predicate, object]);
+                //  console.log(triples);
+               } else {
+              //   console.log("# That's all, folks!", prefixes)
+              //   console.log(triples);
+                   fn(triples);
+               }
+       });
+}
+
+               </script>
+		<script type="text/javascript">
+			var siteDomain = "localhost:8080/marmotta/ldp"
+		//	var query = "SELECT * WHERE {?s ?p ?o} LIMIT 10";
+			var url = "http://" + siteDomain;
+//			url += encodeURIComponent(query);
+			$.ajax({
+				dataType: 'text',
+				url: url,
+				success: function(data) {
+					alert('success: ' + data + ' results');
+					console.log(data);
+                                     //   document.write(Object.getOwnPropertyNames(N3));
+                                     //   document.write(data);
+                                     //   document.write(N3);
+                                        parsedata(data, function(duck) {
+                                         // console.log(duck);
+                                          document.write(duck[0]);
+                                        })
+                                      /// I need to parse the response into triples with N3.js
+                                  /*    for(var k = 0; k < data.results.bindings.length; k++) {
+                                        document.write("subject: ");
+                                        document.write(JSON.stringify(data.results.bindings[k].s.value));
+                                        document.write('<br>'+"predicate: ");
+                                        document.write(JSON.stringify(data.results.bindings[k].p.value));
+                                        document.write('<br>'+"object: ");
+                                        document.write(JSON.stringify(data.results.bindings[k].o.value));
+                                        document.write('<br><br>');
+                                      } */
+				}
+			});
+		</script>
+	</body>
+</html>
