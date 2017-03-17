@@ -12,6 +12,7 @@
 			var query = "SELECT * WHERE {?s ?p ?o} LIMIT 10";
 			var url = "http://" + siteDomain;
 			url += encodeURIComponent(query);
+                        document.write(url);
 			$.ajax({
 				dataType: 'json',
 				url: url,
