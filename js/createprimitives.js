@@ -16,6 +16,8 @@ var replacements = [{ prefix: 'dcterms', uri: 'http://purl.org/dc/terms/' },
   { prefix: 'ex', uri: 'http://example.org/' },
   { prefix: 'foaf', uri: 'http://xmlns.com/foaf/0.1/' },
   { prefix: 'owl', uri: 'http://www.w3.org/2002/07/owl#' },
+  { prefix: 'schema', uri: 'http://schema.org/' },
+  { prefix: 'dbr', uri: 'http://dbpedia.org/resource/' },
   { prefix:  'rdfs', uri: 'http://www.w3.org/2000/01/rdf-schema#' } ,
   { prefix: 'lsi', uri: 'http://data.thespaceplan.com/ontologies/lsi#' }];
  
