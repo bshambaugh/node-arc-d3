@@ -1,8 +1,11 @@
-define(['jsonld','n3lib'], function(jsonld,N3) {
-// https://github.com/lobid/lodmill/issues/250
-// Source:  https://github.com/digitalbazaar/jsonld.js
-//var jsonld = require('jsonld');
-//var N3 = require('n3');
+
+// This should return an array of the form triples = ([[0][0],[0][1],[0][2]],[[1][0],[1][1],[1][2]],[[2][0],[2][1],[2][2]] etc
+// corresponding to data triples = ((subject,predicate,object),(subject2,predicate2,object2), (subject3,predicate3,object3) etc
+// var triples = [["d", "i", "q"],["a", "f", "c"],["c", "g", "d"],["e", "h", "c"],["c", "i", "q"]]; etc
+var jsonld = require('../libraries/jsonld.js');
+// var jsonld = require('jsonld');
+var N3 = require('../libraries/bun2-exportN3.js');
+// var N3 = require('n3');
 
 var string = '<http://localhost/node-arc-p5/data/Food-Growing-Methods.ttl> <http://purl.org/dc/terms/title> "Food Growing Methods" ; <http://www.w3.org/2000/01/rdf-schema#comment> "For independence and resource optimization, some or all of the astronauts diet must be grown in-situ. Various forms have been proposed, from greenhouses to hydroponics, but there must also be optimization in the types of food grown to maximize caloric and nutrient output compared to water and energy input." ; <http://data.thespaceplan.com/ontologies/lsi#averageEstInvestmentCost> "0.0(investment cost pulled from children pages)" ; <http://data.thespaceplan.com/ontologies/lsi#averageEstTimetoMaturity> "0.0 (time to maturity pulled from children pages)" ; <http://data.thespaceplan.com/ontologies/lsi#commercialStatus> "Research" ; <http://data.thespaceplan.com/ontologies/lsi#relatedIndustriesFields> "Health and Medicine" ; <http://data.thespaceplan.com/ontologies/lsi#label> <http://investors.ddns.net:8080/marmotta/ldp/waypaver-lsi/biological-support> ; <http://data.thespaceplan.com/ontologies/lsi#label> <http://investors.ddns.net:8080/marmotta/ldp/waypaver-lsi/habitation-infrastructure> .';
 
@@ -50,54 +53,37 @@ var doc =
     }
 };
 
+returnarray(doc);
 
-// Source: http://json-ld.org
-/*
-var doc = 
-{
-  "@context": "http://json-ld.org/contexts/person.jsonld",
-  "@id": "http://dbpedia.org/resource/John_Lennon",
-  "name": "John Lennon",
-  "born": "1940-10-09",
-  "spouse": "http://dbpedia.org/resource/Cynthia_Lennon"
-};
-*/
-
-//console.log(validateobject(string));
-toarray(doc);
-
-function toarray(string) {
+function returnarray(string) {
 if(validateobject(string) === null) {
  //  console.log('this is an awesome null');
 
   jsonld.toRDF(string, {format: 'application/nquads'}, function(err, nquads) {
-    //    document.write(nquads); 
-    //  console.log(nquads);
+     //  console.log(nquads);
      // nquads is a string of nquads
      //});
 
      var string = nquads;
 
-
      parsedata(string, function(duck) {
      //    document.write(N3);
      //    console.log(N3);
      //    console.log(Object.getOwnPropertyNames(N3));
-    //  console.log(duck);
-           document.write(duck);
+      console.log(duck);
+     //      document.write(duck);
      });
 
    });
 
 } else {
-
   parsedata(string, function(duck) {
-   document.write(duck);
+    console.log(duck);
   });
-
 }
 
 }
+
 
 function validateobject(body) {
   try {
@@ -135,7 +121,5 @@ parser.parse(string,
                    fn(triples);
                }
        });
-};
-
-});
+}
 

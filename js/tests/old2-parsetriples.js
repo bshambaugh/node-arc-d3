@@ -1,43 +1,39 @@
-define(['jsonld','n3lib'], function(jsonld,N3) {
+define(['lodash','n3lib','jquery','jsonld'], function(_,N3,$,jsonld) {
 
-return function(string,fn) {
-if(validateobject(string[0]) === null) {
+// This should return an array of the form triples = ([[0][0],[0][1],[0][2]],[[1][0],[1][1],[1][2]],[[2][0],[2][1],[2][2]] etc
+// corresponding to data triples = ((subject,predicate,object),(subject2,predicate2,object2), (subject3,predicate3,object3) etc
+// var triples = [["d", "i", "q"],["a", "f", "c"],["c", "g", "d"],["e", "h", "c"],["c", "i", "q"]]; etc
+
+
+return function(string, fn) {
+if(validateobject(string) === null) {
  //  console.log('this is an awesome null');
 
-  jsonld.toRDF(string[0], {format: 'application/nquads'}, function(err, nquads) {
-    //    document.write(nquads); 
-    //  console.log(nquads);
+  jsonld.toRDF(string, {format: 'application/nquads'}, function(err, nquads) {
+     //  console.log(nquads);
      // nquads is a string of nquads
      //});
 
- //    var string = nquads;
+     var string = nquads;
 
-
-     parsedata(nquads, function(duck) {
+     parsedata(string, function(duck) {
      //    document.write(N3);
      //    console.log(N3);
      //    console.log(Object.getOwnPropertyNames(N3));
-    //  console.log(duck);
-           fn(duck);
+      fn(duck);
+     //      document.write(duck);
      });
 
    });
 
 } else {
-
-  /// This code only works for turtle files...
-  //   var string_1 = JSON.stringify(string);
-     var string_1 = string[0].toString();
-     var string_2 = string_1.replace(/'/ig,'\\\'');
-     var string_3 = string_2.replace(/<>/ig,'<'+string[1]+'>');
-
-  parsedata(string_3, function(duck) {
-   return fn(duck);
+  parsedata(string, function(duck) {
+    fn(duck);
   });
-
 }
 
 }
+
 
 function validateobject(body) {
   try {
@@ -75,7 +71,6 @@ parser.parse(string,
                    fn(triples);
                }
        });
-};
+}
 
 });
-

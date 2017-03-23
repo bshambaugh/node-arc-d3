@@ -6,6 +6,7 @@ requirejs.config({
        lodash : 'libraries/lodash.min',
        n3lib : 'libraries/bun2-exportN3',
        jquery: 'libraries/jquery-3.1.1.min',
-       d3 : 'libraries/d3'
+       d3 : 'libraries/d3',
+       jsonld : 'libraries/bower_components/jsonld/js/jsonld'
     }
 });
