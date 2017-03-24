@@ -1,17 +1,17 @@
 define(['d3','jquery','createprimitives'], function(d3,$,createprimitives) { 
 // var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
 // var url = 'http://localhost/node-arc-d3/data/test.nq';
- var url = 'http://localhost/node-arc-d3/data/johnlennon.json';
+// var url = 'http://localhost/node-arc-d3/data/johnlennon.json';
 //  var url = 'http://localhost/node-arc-d3/data/example.json';
-//var url = 'http://localhost/node-arc-d3/data/all_vf.ttl';
+ var url = 'http://localhost/node-arc-d3/data/all_vf.ttl';
 // var url = 'http://localhost/node-arc-d3/data/person.jsonld';
 
 function longProcess(callbackfn) {
 //  var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl'; 
 // var url = 'http://localhost/node-arc-d3/data/test.nq';
- var url = 'http://localhost/node-arc-d3/data/johnlennon.json';
+// var url = 'http://localhost/node-arc-d3/data/johnlennon.json';
 //   var url = 'http://localhost/node-arc-d3/data/example.json';
-//   var url = 'http://localhost/node-arc-d3/data/all_vf.ttl'; 
+   var url = 'http://localhost/node-arc-d3/data/all_vf.ttl'; 
 //     var url = 'http://localhost/node-arc-d3/data/person.jsonld';
    createprimitives(url, function(innercallbackfn) {
    //console.log(duckei);
@@ -41,7 +41,7 @@ function draw(width,height,graph) {
   var color = d3.scaleOrdinal(d3.schemeCategory20);
 
   var simulation = d3.forceSimulation()
-//    .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(300).strength(0.5))
+//    .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(200).strength(0.5))
     .force("link", d3.forceLink().id(function(d) { return d.id; }))
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2))
@@ -69,7 +69,7 @@ function draw(width,height,graph) {
                     .attr("font-size","10px")
                     .attr("fill","black");
 
-
+//
 /* 
     var linknodes = svgContainer.append("g")
           .attr("class","nodes")
