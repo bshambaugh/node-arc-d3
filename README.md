@@ -4,6 +4,15 @@
 
 Run this by dropping in /var/www/html or whatever your Apache web root is
 
+Git Clone node-arc-d3 to a web folder (/var/www.html or whatever your Apache web root is). Replace the variable url with the
+path to your file in ![d3sketch.js](/js/d3sketch.js).
+
+var url = 'http://localhost/node-arc-d3/data/test.nq';
+
+Supports Turtle, TriG, N-Triples, N-Quads, and Notation3 (N3) from ![N3](https://github.com/RubenVerborgh/N3.js) .
+Also supports JSON-LD from ![jsonld.js](https://github.com/digitalbazaar/jsonld.js) .
+
+
 # Program flowchart:
 
 ![d3-rdf-progam-flowpng-2](/js/tests/d3-rdf-progam-flowpng-2.png)
