@@ -23,13 +23,42 @@ var replacements = [{ prefix: 'dcterms', uri: 'http://purl.org/dc/terms/' },
 
 return function(url, fn) {
    
-   parsetriples(url, function(duck) {
+   getprimatives(url, function(duck) {
       //  fn(duck);  
        var primitives = constructPrimitives(triplemodifications(duck, replacements, nsURIs, baseURIs,url).triples);
        fn(primitives);     
    });
 
 };
+ 
+function getprimatives(url, fn) {
+  $.get(url, function(data) {
+     /// This code only works for turtle files...
+/*     var string = JSON.stringify(data);
+     var string = data.toString();
+     var string_2 = string.replace(/'/ig,'\\\'');
+     var string_3 = string_2.replace(/<>/ig,'<'+url+'>');
+     // prepare extra data to pass to parse triples.. */
+     var dummy = [];
+     dummy.push(data);
+     dummy.push(url); 
+
+    parsetriples(dummy, function(duck) {
+//  parsetriples(dummy, function(duck) {
+      // console.log(constructPrimatives(tripleModifications.tripleModifications(duck, replacements).triples));
+      // var primatives = constructPrimatives(duck);
+//       var primitives = constructPrimitives(triplemodifications(duck, replacements).triples)
+   //   var primitives = constructPrimitives(triplemodifications(duck, replacements, nsURIs, baseURIs,dummy[1]).triples);
+       fn(duck);
+    //  var primitives = constructPrimitives(triplemodifications(duck, replacements, nsURIs, baseURIs,url).triples);
+    //   fn(primitives);
+  });
+
+
+});
+
+};
+
 
 function constructPrimitives(triples) {
 //subject array

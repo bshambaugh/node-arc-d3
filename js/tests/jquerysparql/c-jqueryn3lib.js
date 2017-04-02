@@ -11,7 +11,7 @@ define(['tests/jquerysparql/tbc-jqueryn3lib'], function(jquerysparql) {
 
    jquerysparql(url, function(duck) {
 
-
+            document.write(duck);
    });
 
 

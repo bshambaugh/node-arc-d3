@@ -1,17 +1,17 @@
 define(['d3','jquery','createprimitives'], function(d3,$,createprimitives) { 
 // var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
 // var url = 'http://localhost/node-arc-d3/data/test.nq';
-// var url = 'http://localhost/node-arc-d3/data/johnlennon.json';
+ var url = 'http://localhost/node-arc-d3/data/johnlennon.json';
 //  var url = 'http://localhost/node-arc-d3/data/example.json';
- var url = 'http://localhost/node-arc-d3/data/all_vf.ttl';
+// var url = 'http://localhost/node-arc-d3/data/all_vf.ttl';
 // var url = 'http://localhost/node-arc-d3/data/person.jsonld';
 
 function longProcess(callbackfn) {
 //  var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl'; 
 // var url = 'http://localhost/node-arc-d3/data/test.nq';
-// var url = 'http://localhost/node-arc-d3/data/johnlennon.json';
+  var url = 'http://localhost/node-arc-d3/data/johnlennon.json';
 //   var url = 'http://localhost/node-arc-d3/data/example.json';
-   var url = 'http://localhost/node-arc-d3/data/all_vf.ttl'; 
+//   var url = 'http://localhost/node-arc-d3/data/all_vf.ttl'; 
 //     var url = 'http://localhost/node-arc-d3/data/person.jsonld';
    createprimitives(url, function(innercallbackfn) {
    //console.log(duckei);

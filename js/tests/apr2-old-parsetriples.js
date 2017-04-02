@@ -1,21 +1,6 @@
-define(['jsonld','n3lib','jquery'], function(jsonld,N3,$) {
+define(['jsonld','n3lib'], function(jsonld,N3) {
 
-return function(url, fn) { 
-  $.get(url, function(data) {
-     var dummy = [];
-     dummy.push(data);
-     dummy.push(url);
-
-    gettriples(dummy, function(duck) {
-       fn(duck);
-    });
-
- });
-
-};
-
-
-function gettriples(string,fn) {
+return function(string,fn) {
 if(validateobject(string[0]) === null) {
  //  console.log('this is an awesome null');
 
