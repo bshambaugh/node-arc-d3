@@ -2,22 +2,20 @@ define(['urijs/URI','jquery','tests/jqueryldphttp/tbc-jqueryldphttp','tests/jque
 
 //var url = "http://localhost:8080/marmotta/sparql?query=SELECT%20*%20WHERE%20%7B%3Fs%20%3Fp%20%3Fo%7D%20LIMIT%2010";
 //var url = "http://localhost:8080/marmotta/ldp";
-//var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
+var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
 
-return function(url, fn) {
-  if(URI(url)._parts.query !== null) {
-    document.write('SPARQL');
+if(URI(url)._parts.query !== null) {
+  document.write('SPARQL');
 
      jquerysparql(url, function(duck) {
-         fn(duck)
-       //  document.write(duck);
+
+         document.write(duck);
     });
 
   // try...catch...on sparql query ... code...
-  } else {
-    LDPorFile(url, function(duck) { console.log(duck); fn(duck); });
- }
-};
+} else {
+  LDPorFile(url, function(duck) { console.log(duck); });
+}
 
 function LDPorFile(url,fn) {
      var type = '';
@@ -33,16 +31,15 @@ function LDPorFile(url,fn) {
                     document.write('LDP');
                    
                          jqueryldphttp(url, function(duck) {
-                          //  document.write(duck);
-                            fn(duck);
+                            document.write(duck);
                           });
 
                  } else {
                     document.write('File');
 
                        parsetriples(url, function(duck) {
-                           //  document.write(duck);   
-                             fn(duck);
+                             document.write(duck);   
+       
                         });                     
 
                  }
