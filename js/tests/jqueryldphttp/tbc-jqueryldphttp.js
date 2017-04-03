@@ -16,7 +16,7 @@ $.ajax({
                //   document.write('howdy');
                   for(var k = 0; k < duck.length; k++) {
                  //   document.write('subject: ' + duck[k][0] + ', predicate: ' + duck[k][1] + 'object: ' + duck[k][2]);
-                    triples.push(duck[k][0],duck[k][1],duck[k][2]);
+                    triples.push([duck[k][0],duck[k][1],duck[k][2]]);
                   }
                   //   document.write(triples);
                    fn(triples);

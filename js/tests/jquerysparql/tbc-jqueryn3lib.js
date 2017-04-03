@@ -32,7 +32,7 @@ return function (url, fn) {
                           //  let object = JSON.stringify(data.results.bindings[k].o.value);
                             triples.push([subject,predicate,object]);
                          }
-                   document.write(triples);
+                //   document.write(triples);
                    fn(triples);
                 }
      });
