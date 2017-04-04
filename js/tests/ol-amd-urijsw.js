@@ -1,4 +1,4 @@
-define(['urijs/URI','jquery','tests/jquerysparql/tbc2-jqueryn3lib','libraries/fn_parsefile'], function(URI,$,jquerysparql,parsefile) {
+define(['urijs/URI','jquery','tests/jqueryldphttp/tbc2-jqueryldphttp','tests/jquerysparql/tbc2-jqueryn3lib','parsetriples'], function(URI,$,jqueryldphttp,jquerysparql,parsetriples) {
 
 //var url = "http://localhost:8080/marmotta/sparql?query=SELECT%20*%20WHERE%20%7B%3Fs%20%3Fp%20%3Fo%7D%20LIMIT%2010";
 //var url = "http://localhost:8080/marmotta/ldp";
@@ -15,7 +15,7 @@ return function(url, fn) {
 
   // try...catch...on sparql query ... code...
   } else {
-    LDPorFile(url, function(duck) { fn(duck); });
+    LDPorFile(url, function(duck) { console.log(duck); fn(duck); });
  }
 };
 
@@ -42,7 +42,7 @@ function LDPorFile(url,fn) {
 
                   //    jquerysparql.parsefile(url, function(duck) {
                    //    jquerysparql.parsefile(url, function(duck) {
-                       parsefile(url, function(duck) {
+                       parsetriples(url, function(duck) {
                            //  document.write(duck);   
                              fn(duck);
                         });                     
