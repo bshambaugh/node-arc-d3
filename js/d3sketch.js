@@ -1,21 +1,21 @@
 define(['d3','jquery','createprimitives'], function(d3,$,createprimitives) { 
-//  var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
+  var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
 // var url = 'http://localhost/node-arc-d3/data/test.nq';
 // var url = 'http://localhost:8080/marmotta/ldp';
 // var url = "http://localhost:8080/marmotta/sparql?query=SELECT%20*%20WHERE%20%7B%3Fs%20%3Fp%20%3Fo%7D%20LIMIT%2010";
 // var url = 'http://localhost/node-arc-d3/data/johnlennon.json';
 //  var url = 'http://localhost/node-arc-d3/data/example.json';
- var url = 'http://localhost/node-arc-d3/data/all_vf.ttl';
+// var url = 'http://localhost/node-arc-d3/data/all_vf.ttl';
 // var url = 'http://localhost/node-arc-d3/data/person.jsonld';
 
 function longProcess(callbackfn) {
-//  var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl'; 
+  var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl'; 
 // var url = 'http://localhost/node-arc-d3/data/test.nq';
 //  var url = 'http://localhost:8080/marmotta/ldp';
 //  var url = "http://localhost:8080/marmotta/sparql?query=SELECT%20*%20WHERE%20%7B%3Fs%20%3Fp%20%3Fo%7D%20LIMIT%2010";
 //  var url = 'http://localhost/node-arc-d3/data/johnlennon.json';
 //   var url = 'http://localhost/node-arc-d3/data/example.json';
-   var url = 'http://localhost/node-arc-d3/data/all_vf.ttl'; 
+//   var url = 'http://localhost/node-arc-d3/data/all_vf.ttl'; 
 //     var url = 'http://localhost/node-arc-d3/data/person.jsonld';
    createprimitives(url, function(innercallbackfn) {
    //console.log(duckei);
@@ -25,8 +25,13 @@ function longProcess(callbackfn) {
 }
 
 function myCallback(results) {
-  width = 1024;
-  height = 800;
+   var height = document.getElementById('graphcontainer').clientHeight - 4 * document.getElementById('graphcontainer').clientTop;
+ var width = document.getElementById('graphcontainer').clientWidth - 2 * document.getElementById('graphcontainer').clientLeft;
+
+//  width = 1024;
+//  height = 800;
+//    width = 600;
+//    height = 500;
  // console.log(results);
   draw(width,height,results);
 }
@@ -38,7 +43,9 @@ function draw(width,height,graph) {
 
  // see https://bl.ocks.org/mbostock/4062045
 
- var svgContainer = d3.select("body").append("svg")
+
+   var svgContainer = d3.select(".c").append("svg")
+//   var svgContainer = d3.select("body").append("svg")
                                        .attr("width",width)
                                        .attr("height",height);
 
@@ -57,6 +64,7 @@ function draw(width,height,graph) {
     .selectAll("line")
     .data(graph.links)
     .enter().append("line")
+      .attr("stroke",'#999')
       .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
 
     // Extended d3 force directed graphs with link labels
