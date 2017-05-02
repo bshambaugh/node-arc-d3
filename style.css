@@ -11,7 +11,7 @@ body {
         display: grid;
       /*  grid-gap: 10px; */
         grid-gap: 0px;
-        grid-template-columns: [col1-start] 200px  [col2-start] auto  [col3-start] 200px  [col3-end];
+        grid-template-columns: [col1-start] 100px  [col2-start] 1fr  [col3-start] 200px  [col3-end];
         grid-template-rows: [row1-start] 50px [row2-start] 1fr [row2-end];
         background-color: #fff;
         color: #444;
@@ -54,6 +54,10 @@ body {
     .bb {
        grid-column: 1;
        grid-row: 2;  
+    }
+    .bc {
+       grid-column: 1;
+       grid-row: 3;
     }
     .c {
         grid-column: col2-start;
