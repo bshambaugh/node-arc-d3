@@ -64,7 +64,6 @@ function draw(width,height,graph) {
     .selectAll("line")
     .data(graph.links)
     .enter().append("line")
-      .attr("stroke",'#999')
       .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
 
     // Extended d3 force directed graphs with link labels
