@@ -14,6 +14,7 @@ var url = 'http://localhost/node-arc-d3/data/test.nq';
 Supports Turtle, TriG, N-Triples, N-Quads, and Notation3 (N3) from ![N3](https://github.com/RubenVerborgh/N3.js) .
 Also supports JSON-LD from ![jsonld.js](https://github.com/digitalbazaar/jsonld.js) .
 
+The Grid Layout Boxes are Supported by the Following Browsers: [http://gridbyexample.com/browsers/](http://gridbyexample.com/browsers/) .
 
 # Program flowchart:
 
