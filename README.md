@@ -24,9 +24,9 @@ The Grid Layout Boxes (A, DA, DB, ..) are Supported by the Following Browsers: [
 
 # Goal:
 
-In the near future with issue [#22](EISPP_3_M_Fernandez_NLQ_2.png) :
+In the near future with issue [#22](https://github.com/bshambaugh/node-arc-d3/issues/22) :
 
 ![goal.png](/js/tests/goal/goal.png)
 
-In the bit farther future with PowerAqua for Open QA using ![PowerAqua-decompiled](https://github.com/bshambaugh/PowerAqua-decompiled), ![PowerAqua Backup Files](https://sourceforge.net/projects/poweraqua/files/), and local files stored at /var/lib/tomcat7/webapps/poweraqua .
+In the bit farther future with PowerAqua for Open QA using ![PowerAqua-decompiled](https://github.com/bshambaugh/PowerAqua-decompiled), [PowerAqua Backup Files](https://sourceforge.net/projects/poweraqua/files/), and local files stored at /var/lib/tomcat7/webapps/poweraqua . In focus: "Car Projects with Brent Shambaugh" text box, Query Button to the right, column on the far right, and graph in the center. Also the "Data Path or URI" text box, and Load Data Button (called the Load File / LDP Container button above). Ignore: Column on the left (not everything is implemented yet), Documents box (it is part of of M. Fernandez' Thesis), 
 ![EISPP_3_M_Fernandez_NLQ_2.png](/js/tests/goal/EISPP_3_M_Fernandez_NLQ_2.png)
