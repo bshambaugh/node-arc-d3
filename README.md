@@ -21,3 +21,12 @@ The Grid Layout Boxes (A, DA, DB, ..) are Supported by the Following Browsers: [
 ![d3-rdf-progam-flowpng-2](/js/tests/d3-rdf-progam-flowpng-2.png)
 
 #Based off of [Force Directed Graph with D3.js](https://bl.ocks.org/mbostock/4062045).
+
+# Goal:
+
+In the near future with issue [#22](EISPP_3_M_Fernandez_NLQ_2.png) :
+
+![goal.png](/js/tests/goal/goal.png)
+
+In the bit farther future with PowerAqua for Open QA using ![PowerAqua-decompiled](https://github.com/bshambaugh/PowerAqua-decompiled), ![PowerAqua Backup Files](https://sourceforge.net/projects/poweraqua/files/), and local files stored at /var/lib/tomcat7/webapps/poweraqua .
+![EISPP_3_M_Fernandez_NLQ_2.png](/js/tests/goal/EISPP_3_M_Fernandez_NLQ_2.png)
