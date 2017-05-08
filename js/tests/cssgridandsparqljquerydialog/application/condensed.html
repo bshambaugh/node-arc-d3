@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello World</title>
+<link href="../_css/jquery-ui.min.css" rel="stylesheet"> 
+<link href="cond-interact.css" rel="stylesheet">
+<script src="../_js/jquery.min.js"></script>
+<script src="../_js/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function() {
+ $('#note').draggable().resizable();
+  
+}); // end ready
+</script>
+<script>
+    $( function() {
+    $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    $( "button, input, a" ).click( function( event ) {
+      event.preventDefault();
+    } );
+  } );
+</script>
+</head>
+<body>
+   <div class="wrapper">
+      <div class="content">
+          <div id="note">
+               <h2>You can drag me</h2>
+                    <p>I'm a note on the page.</p>
+                    <div class="widget">
+                        <h1>Widget Buttons</h1>
+                           <button>A button element</button>
+                    </div>
+          </div>
+      </div>
+   </div>
+</body>
+</html>
+
