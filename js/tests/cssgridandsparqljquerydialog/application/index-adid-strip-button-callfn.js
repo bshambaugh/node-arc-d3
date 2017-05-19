@@ -6,7 +6,9 @@ $( function() {
 
    //   var siteDomain = "http://localhost:8080/marmotta/sparql?query=";
       
-    $( "#users" ).append( name.val() );  
+//    $( "#users" ).append( name.val() );  
+// I only want to append if name.val() ) resolves... (so I need to do an xmlhttp request...)
+    $("#duck").append( d3sketch(name.val()) );
 
    //   $( "#users" ).append( siteDomain + encodeURIComponent(name.val()) );
         dialog.dialog( "close" );
