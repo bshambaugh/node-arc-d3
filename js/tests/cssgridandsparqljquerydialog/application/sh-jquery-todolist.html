@@ -12,9 +12,7 @@ $(document).ready(function() {
 		var $field = $('#textfield')
 		var fieldVal = $field.val(); // get the val from the text field
 		if (fieldVal) { 
-		     //	$('#tasklist').append('<li>' + fieldVal + '</li>' );
-                        $('#duck').append( d3sketch(name.val()) );
-                        // The code above is where we run the function to do stuff
+			$('#tasklist').append('<li>' + fieldVal + '</li>' );
 			$field.val(''); // empty the text field once appended... 
 			$field.focus(); 
 		}
@@ -29,12 +27,10 @@ $(document).ready(function() {
 			<form action="#" method="get">
 		<p><input name="textfield" type="text" id="textfield"> <input name="button" type="button" id="button" value="Add Task"></p>
 		</form>
-
-<!--
 		<h1>To Do List</h1>
 		<ul id="tasklist">
+
 		</ul>
--->
 		</div>
 	</div>
 </div>
