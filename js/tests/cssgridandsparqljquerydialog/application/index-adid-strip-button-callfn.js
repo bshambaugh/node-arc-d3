@@ -38,5 +38,12 @@ $( function() {
     $( "#create-user" ).button().on( "click", function() {
       dialog.dialog( "open" );
     });
+ 
+
+     $( "#loadfileldpbutton" ).button().on( "click", function() {
+         alert("I loaded a file"); 
+    });
+
+
   } );
 
