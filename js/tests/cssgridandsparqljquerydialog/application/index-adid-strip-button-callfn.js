@@ -41,7 +41,17 @@ $( function() {
  
 
      $( "#loadfileldpbutton" ).button().on( "click", function() {
-         alert("I loaded a file"); 
+         var $field = $('#textfield');
+         var fieldVal = $field.val();
+         if(fieldVal) {
+           // erase the present contents of the duck container
+           var container = document.getElementById('duck');
+           container.innerHTML = '';
+           // add new content to the duck container via the tasklist id
+           $('#tasklist').replaceWith(d3sketch(fieldVal));
+           $field.val('');
+           $field.focus();
+         }  
     });
 
 
