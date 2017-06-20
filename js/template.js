@@ -1,3 +1,5 @@
+define(['d3sketch'], function(d3sketch) {
+
 $( function() {
     var dialog, form,
       name = $( "#name" );
@@ -63,3 +65,4 @@ $( function() {
 
   } );
 
+});
