@@ -8,6 +8,7 @@ requirejs.config({
        jquery: 'libraries/jquery-3.1.1.min',
        d3 : 'libraries/d3',
     urijs : 'libraries/bower_components/urijs/src/',
-       jsonld : 'libraries/bower_components/jsonld/js/jsonld'
+       jsonld : 'libraries/bower_components/jsonld/js/jsonld',
+       jqueryui: 'libraries/jquery-ui'
     }
 });
