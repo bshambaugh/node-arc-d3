@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <link rel = "stylesheet" type="text/css" href="css/style.css">     
+     <link rel = "stylesheet" type="text/css" href="css/theme.css">
+     <script data-main="js/config" src="js/libraries/require.js"></script>
+     <meta charset="UTF-8">
+  </head>
+<body>
+
+     <script>
+     require(['config','d3sketch','parsetriples','triplemodifications','libraries/fn_triplemodifications','createprimitives'], function(d3sketch,parsetriples,triplemodifications,fn_triplemodifications,createprimitives) {
+
+                  require(['call-d3sketch'])
+     });
+     </script>
+  
+<div class="wrapper">
+  <div class="box a">A</div>
+  <div class="box b">
+    <div class="box ba">BA</div>
+    <div class="box bb">BB</div>
+    <div class="box bc">BC</div>
+  </div>
+  <div class="box c" id="graphcontainer">
+
+<!--
+     <script>
+     require(['config','d3sketch','parsetriples','triplemodifications','libraries/fn_triplemodifications','createprimitives'], function(d3sketch,parsetriples,triplemodifications,fn_triplemodifications,createprimitives) {
+
+                  require(['call-d3sketch'])
+     });
+     </script>
+-->  
+
+ </div>
+  <div class="box d">
+     <div class="box da">DA</div>
+     <div class="box db">DB</div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
