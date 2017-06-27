@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <link rel = "stylesheet" type="text/css" href="css/style.css">
+     <link rel = "stylesheet" type="text/css" href="css/theme.css">
+     <script data-main="config" src="../node_modules/requirejs/require.js"></script>
+     <meta charset="UTF-8">
+  </head>
+<body>
+  
+
+
+<div class="wrapper">
+  <div class="box a">A</div>
+  <div class="box b">
+    <div class="box ba">BA</div>
+    <div class="box bb">BB</div>
+    <div class="box bc">BC</div>
+  </div>
+  <div class="box c" id="graphcontainer">
+
+     <script>
+//     require(['config','parsetriples','triplemodifications','createprimatives'], function(parsetriples,triplemodifications,createprimatives) {
+     require(['config','d3sketch','parsetriples','triplemodifications','createprimitives'], function(d3sketch,parsetriples,triplemodifications,fn_triplemodifications,createprimitives) {
+
+        // all of your code here
+//        alert();
+//        alert('after require keyword');
+//       require(['tests/createprimatives-tests'])
+//     });
+//          require(['createprimatives'], function() {
+//             require(['tests/call-create-primatives-tests'])             
+//          }); 
+//              require(['calling-createprimatives'])
+//                require(['call-fnt'])
+                  require(['call-d3sketch'])
+//                  require(['d3sketch'])
+//                  require(['tests/c-amd-urijsw']);
+//                     require(['tests/c-errorn3jsonld'])
+//                    require(['tests/jqueryldphttp/index3'])
+//                    require(['tests/jqueryldphttp/c-jqueryldphttp'])
+//                    require(['tests/jquerysparql/index3'])
+//                     require(['tests/jquerysparql/c-jqueryn3lib'])
+//                require(['call-tmf'])
+//              require(['call-solo-createprimatives'])
+//                require(['createprimatives'])
+//              require(['callparsedtriples'])            
+//             require(['tests/n3parse-triples'])
+/*           require(['n3parse-triples'], function() {
+                require(['createprimatives'])
+            }); */
+//              require(['tests/amd-common-n3parse-triples'])
+//              require(['tests/test2-rdflib'])
+//            require(['tests/call-createprimatives-test'])
+         });
+     </script>
+  
+
+ </div>
+  <div class="box d">
+     <div class="box da">DA</div>
+     <div class="box db">DB</div>
+  </div>
+</div>
+
+
+
+</body>
+</html>

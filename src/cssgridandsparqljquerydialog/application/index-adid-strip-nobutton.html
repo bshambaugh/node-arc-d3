@@ -1,0 +1,206 @@
+<!-- Based off of draggable.html accompanying chapter12:
+                <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+     <link rel = "stylesheet" type="text/css" href="style.css">     
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width" orientation="portrait">
+   <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+  $( function() {
+    var dialog, form,
+      name = $( "#name" );
+
+    function addUser() {
+
+      var siteDomain = "http://localhost:8080/marmotta/sparql?query=";
+      
+        $( "#users" ).append( siteDomain + encodeURIComponent(name.val()) );
+        dialog.dialog( "close" );
+    }
+ 
+    dialog = $( "#dialog-form" ).dialog({
+      autoOpen: false,
+      height: 220,
+      width: 285,
+      modal: true,
+      buttons: {
+        "Execute": addUser,
+        Cancel: function() {
+          dialog.dialog( "close" );
+        }
+      },
+      close: function() {
+        form[ 0 ].reset();
+      }
+    });
+ 
+    form = dialog.find( "form" ).on( "submit", function( event ) {
+      event.preventDefault();
+      addUser();
+    });
+ 
+    $( "#create-user" ).button().on( "click", function() {
+      dialog.dialog( "open" );
+    });
+  } );
+  </script>
+
+<!--end McFarland's book -->
+  <style>
+   /* label, input { display:block; } */
+    label { display:block; }
+    input.text { margin-bottom:12px; width:95%; padding: .4em; }
+    fieldset { padding:0; border:0; margin-top:25px; }
+    h1 { font-size: 1.2em; margin: .6em 0; }
+
+   /* target the SPARQL Endpoint Button */
+   .ui-button {
+       font-size: 0.5em;
+
+    }
+
+
+  </style>
+ </head>
+<body>
+  
+<!-- Modified McFarland Book code -->
+
+<div id="dialog-form" title="SPARQL Endpoint">
+
+  <form>
+    <fieldset>
+      <label for="name">Do your SPARQL Query here:</label>
+      <input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
+      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+    </fieldset>
+  </form>
+</div>
+
+<div class="wrapper">
+
+  <div style="background-color:#EEEEEE" class="box a">
+     <button id="create-user">SPARQL Endpoint</button> 
+<!--   <input name="button" type="button" id="create-user" value="SPARQL Endpoint"> -->
+   <input name="textfield" type="text" id="textfield">
+   <input name="button" type="button" id="button" value="Load File / LDP Container">
+
+</div>
+  <div class="box b">
+    <div class="box ba">BA</div>
+    <div class="box bb">BB</div>
+  </div>
+  <div class="box c" id="duck">
+     <style>
+
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+</style>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+ var height = document.getElementById('duck').clientHeight - 4 * document.getElementById('duck').clientTop;
+ var width = document.getElementById('duck').clientWidth - 2 * document.getElementById('duck').clientLeft;
+
+ var svgContainer = d3.select(".c").append("svg")
+                                   .attr("width", width)
+                                   .attr("height", height);
+
+var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+var simulation = d3.forceSimulation()
+    .force("link", d3.forceLink().id(function(d) { return d.id; }))
+    .force("charge", d3.forceManyBody())
+    .force("center", d3.forceCenter(width / 2, height / 2));
+
+d3.json("miserables.json", function(error, graph) {
+  if (error) throw error;
+
+  var link = svgContainer.append("g")
+      .attr("class", "links")
+    .selectAll("line")
+    .data(graph.links)
+    .enter().append("line")
+      .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+
+  var node = svgContainer.append("g")
+      .attr("class", "nodes")
+    .selectAll("circle")
+    .data(graph.nodes)
+    .enter().append("circle")
+      .attr("r", 5)
+      .attr("fill", function(d) { return color(d.group); })
+      .call(d3.drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended));
+
+  node.append("title")
+      .text(function(d) { return d.id; });
+
+  simulation
+      .nodes(graph.nodes)
+      .on("tick", ticked);
+
+  simulation.force("link")
+      .links(graph.links);
+
+  function ticked() {
+    link
+        .attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    node
+        .attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; });
+  }
+});
+
+function dragstarted(d) {
+  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  d.fx = d.x;
+  d.fy = d.y;
+}
+
+function dragged(d) {
+  d.fx = d3.event.x;
+  d.fy = d3.event.y;
+}
+
+function dragended(d) {
+  if (!d3.event.active) simulation.alphaTarget(0);
+  d.fx = null;
+  d.fy = null;
+}
+
+</script>
+
+
+  </div>
+  <div class="box d">
+     <div class="box da" id="users">DA</div>
+     <div class="box db">DB</div>
+  </div>
+</div>
+
+
+
+</body>
+</html>

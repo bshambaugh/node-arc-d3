@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script>
+$(document).ready(function() {
+	$('form').submit(function(evt){
+		evt.preventDefault();
+	}); // end submit
+	$('#button').click(function() {
+		var $field = $('#textfield')
+		var fieldVal = $field.val(); // get the val from the text field
+		if (fieldVal) { 
+			$('#tasklist').append('<li>' + fieldVal + '</li>' );
+			$field.val(''); // empty the text field once appended... 
+			$field.focus(); 
+		}
+	})// end click
+});
+</script>
+</head>
+<body id="events">
+<div class="wrapper">
+	<div class="content">
+		<div class="main">
+			<form action="#" method="get">
+		<p><input name="textfield" type="text" id="textfield"> <input name="button" type="button" id="button" value="Add Task"></p>
+		</form>
+		<h1>To Do List</h1>
+		<ul id="tasklist">
+
+		</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+

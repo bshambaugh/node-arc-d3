@@ -1,0 +1,29 @@
+{
+  "name": "arc-d3",
+  "version": "1.0.0",
+  "description": "<!-- ![forceCollidefitnodelabels.png](/js/tests/forceCollidefitnodelabels.png) -->\r ![gridwgraph.png](/js/tests/gridwgraph.png)",
+  "main": "index.js",
+  "scripts": {
+    "start": "",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bshambaugh/node-arc-d3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bshambaugh/node-arc-d3/issues"
+  },
+  "homepage": "https://github.com/bshambaugh/node-arc-d3#readme",
+  "dependencies": {
+    "d3": "^4.9.1",
+    "jquery": "^3.2.1",
+    "jsonld": "^0.4.12",
+    "lodash": "^4.17.4",
+    "n3": "^0.10.0",
+    "requirejs": "^2.3.3",
+    "urijs": "^1.18.10"
+  }
+}
