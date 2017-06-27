@@ -11,7 +11,11 @@
 
 
 <div class="wrapper">
-  <div class="box a">A</div>
+  <div class="box a">
+      <input name="textfield" type="text" id="textfield" value="file:/E:/dev/brent/node-arc-d3/src/data/johnlennon.json">
+      <button id="loadfileldpbutton" class="ui-button ui-corner-all ui-widget">Load File / LDP Container</button>
+
+  </div>
   <div class="box b">
     <div class="box ba">BA</div>
     <div class="box bb">BB</div>
@@ -21,8 +25,15 @@
 
      <script>
 //     require(['config','parsetriples','triplemodifications','createprimatives'], function(parsetriples,triplemodifications,createprimatives) {
-     require(['config','d3sketch','parsetriples','triplemodifications','createprimitives'], function(d3sketch,parsetriples,triplemodifications,fn_triplemodifications,createprimitives) {
+     require(['config','d3sketch','parsetriples','triplemodifications','createprimitives'], function(config,d3sketch,parsetriples,triplemodifications,fn_triplemodifications,createprimitives) {
 
+
+         $( "#loadfileldpbutton" ).click(function() {
+             console.log( "Handler for .click() called.", $("#textfield").val() );
+             var url = $("#textfield").val();
+
+             d3sketch(url);
+         });
         // all of your code here
 //        alert();
 //        alert('after require keyword');
@@ -53,6 +64,7 @@
 //              require(['tests/test2-rdflib'])
 //            require(['tests/call-createprimatives-test'])
          });
+
      </script>
   
 

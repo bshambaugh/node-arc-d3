@@ -14,6 +14,7 @@ requirejs.config({
         fn_parsefile: './fn_parsefile',
         parsetriples: './parsetriples',
         'call-d3sketch': './call-d3sketch',
+        'd3sketch': './d3sketch'
 
     }
 
