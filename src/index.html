@@ -3,15 +3,17 @@
   <head>
      <link rel = "stylesheet" type="text/css" href="css/style.css">
      <link rel = "stylesheet" type="text/css" href="css/theme.css">
+     <style>
+          #draggable { width: 150px; height: 150px; padding: 0.5em; }
+     </style>
      <script data-main="config" src="../node_modules/requirejs/require.js"></script>
      <meta charset="UTF-8">
   </head>
 <body>
-  
-
 
 <div class="wrapper">
   <div class="box a">
+      <button id="create-user">SPARQL Endpoint</button>
       <input name="textfield" type="text" id="textfield" value="file:/E:/dev/brent/node-arc-d3/src/data/johnlennon.json">
       <button id="loadfileldpbutton" class="ui-button ui-corner-all ui-widget">Load File / LDP Container</button>
 
@@ -26,14 +28,19 @@
      <script>
 //     require(['config','parsetriples','triplemodifications','createprimatives'], function(parsetriples,triplemodifications,createprimatives) {
      require(['config','d3sketch','parsetriples','triplemodifications','createprimitives'], function(config,d3sketch,parsetriples,triplemodifications,fn_triplemodifications,createprimitives) {
-
-
+          
          $( "#loadfileldpbutton" ).click(function() {
              console.log( "Handler for .click() called.", $("#textfield").val() );
-             var url = $("#textfield").val();
-
+           var url = $("#textfield").val();
+           if(url) {
+             var container = document.getElementById('graphcontainer');
+             container.innerHTML = '';
              d3sketch(url);
+         //    $("#textfield").val('');
+         //    $("#textfield").focus();
+            }
          });
+
         // all of your code here
 //        alert();
 //        alert('after require keyword');
@@ -74,8 +81,6 @@
      <div class="box db">DB</div>
   </div>
 </div>
-
-
 
 </body>
 </html>
