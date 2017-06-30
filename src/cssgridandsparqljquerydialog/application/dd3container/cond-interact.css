@@ -1,0 +1,24 @@
+div.draggable {
+  width: 100px;
+  height: 100px;
+}
+
+#note {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 250px;
+  height: 300px;
+  background-color: rgba(214,223,226,.5);
+  border: 1px solid #333;
+}
+
+#note h2 {
+  background-color: rgba(214,223,226,1);
+  padding: 5px 20px;
+}
+
+#note p {
+  margin: 20px;
+}
+

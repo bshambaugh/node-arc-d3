@@ -1,0 +1,179 @@
+<!-- Based off of draggable.html accompanying chapter12:
+                <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+     <link rel = "stylesheet" type="text/css" href="style.css">     
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width" orientation="portrait">
+<!-- Based off of draggable.html accompanying chapter12:
+                <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+-->
+     <link href="../_css/jquery-ui.min.css" rel="stylesheet"> 
+     <link href="cond-interact.css" rel="stylesheet"> <!-- modified to include only necessary code -->
+     <script src="../_js/jquery.min.js"></script>
+     <script src="../_js/jquery-ui.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  $( "#note" ).draggable().resizable();  
+}); // end ready
+</script>
+<script>
+    $( function() {
+    $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    $( "button, input, a" ).click( function( event ) {
+      event.preventDefault();
+    } );
+  } );
+
+</script>
+<!--end McFarland's book -->
+  </head>
+<body>
+  
+<!-- Modified McFarland Book code -->
+
+<div class="wrapper">
+      <div class="content">
+          <div id="note">
+               <h2>Draggable Dialog</h2>
+                    <p>Do your sparql Queries Here.</p>
+                    <input name="textfield" type="text" id="textfield">
+                    <div class="widget">
+                           <button>Execute</button>
+                    </div>
+          </div>
+      </div> 
+
+<!-- end of modified code -->
+
+  <div style="background-color:#EEEEEE" class="box a">
+<!--   <input name="button" type="button" id="button" value="Protege">
+   <input name="button" type="button" id="button" value="LDBrowser">
+   <input name="button" type="button" id="button" value="OB"> -->
+   <button id="sparqlendpoint">SPARQL Endpoint</button>
+<!--   <input name="button" type="button" id="sparqlendpoint" value="SPARQL Endpoint"> -->
+<!--  <input name="textfield" type="text" id="textfield">
+   <input name="button" type="button" id="button" value="Query">  
+   <input name="button" type="button" id="button" value="Preferences"> --> 
+   <input name="textfield" type="text" id="textfield">
+   <input name="button" type="button" id="button" value="Load File / LDP Container">
+<!--   <input name="button" type="button" id="button" value="Save File"> -->
+
+</div>
+  <div class="box b">
+    <div class="box ba">BA</div>
+    <div class="box bb">BB</div>
+  </div>
+  <div class="box c" id="duck">
+
+<style>
+
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+</style>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+ var height = document.getElementById('duck').clientHeight - 4 * document.getElementById('duck').clientTop;
+ var width = document.getElementById('duck').clientWidth - 2 * document.getElementById('duck').clientLeft;
+
+ var svgContainer = d3.select(".c").append("svg")
+                                   .attr("width", width)
+                                   .attr("height", height);
+
+var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+var simulation = d3.forceSimulation()
+    .force("link", d3.forceLink().id(function(d) { return d.id; }))
+    .force("charge", d3.forceManyBody())
+    .force("center", d3.forceCenter(width / 2, height / 2));
+
+d3.json("miserables.json", function(error, graph) {
+  if (error) throw error;
+
+  var link = svgContainer.append("g")
+      .attr("class", "links")
+    .selectAll("line")
+    .data(graph.links)
+    .enter().append("line")
+      .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+
+  var node = svgContainer.append("g")
+      .attr("class", "nodes")
+    .selectAll("circle")
+    .data(graph.nodes)
+    .enter().append("circle")
+      .attr("r", 5)
+      .attr("fill", function(d) { return color(d.group); })
+      .call(d3.drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended));
+
+  node.append("title")
+      .text(function(d) { return d.id; });
+
+  simulation
+      .nodes(graph.nodes)
+      .on("tick", ticked);
+
+  simulation.force("link")
+      .links(graph.links);
+
+  function ticked() {
+    link
+        .attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    node
+        .attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; });
+  }
+});
+
+function dragstarted(d) {
+  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  d.fx = d.x;
+  d.fy = d.y;
+}
+
+function dragged(d) {
+  d.fx = d3.event.x;
+  d.fy = d3.event.y;
+}
+
+function dragended(d) {
+  if (!d3.event.active) simulation.alphaTarget(0);
+  d.fx = null;
+  d.fy = null;
+}
+
+</script>
+
+  
+
+ </div>
+  <div class="box d">
+     <div class="box da">DA</div>
+     <div class="box db">DB</div>
+  </div>
+</div>
+
+
+
+</body>
+</html>

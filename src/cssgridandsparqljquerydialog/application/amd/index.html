@@ -1,0 +1,94 @@
+<!-- Based off of draggable.html accompanying chapter12:
+                <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+     <link rel = "stylesheet" type="text/css" href="./css/style.css">     
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width" orientation="portrait">
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+     <link rel="stylesheet" href="./css/index-adid-strip-button.css">
+<!-- Instead of all of this ...   just point to require.js -->
+     <script data-main="js/config" src="js/libraries/require.js"></script>
+<!-- -->
+<!--
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="./cp-index-adid-strip-button-callfn.js"></script>
+  <script src="./function-d3sketch.js"></script>
+-->
+<!-- end of pointing to stuff -->
+
+
+<!--end McFarland's book -->
+  <script>
+     require(['config','cp-index-adid-strip-button-callfn','function-d3sketch'], function(buttonfunc,fncd3sketch) {
+         
+     });
+  </script>
+ </head>
+<body>
+  
+<!-- Modified McFarland Book code -->
+
+<div id="dialog-form" title="SPARQL Endpoint">
+
+  <form>
+    <fieldset>
+      <label for="name">Do your SPARQL Query here:</label>
+      <input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
+      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+    </fieldset>
+  </form>
+</div>
+
+
+<div class="wrapper">
+
+  <div style="background-color:#EEEEEE" class="box a">
+     <button id="create-user">SPARQL Endpoint</button> 
+<!--   <input name="button" type="button" id="create-user" value="SPARQL Endpoint"> -->
+   <input name="textfield" type="text" id="textfield">
+   <button id="loadfileldpbutton">Load File / LDP Container</button>
+<!--   <input name="button" type="button" id="button" value="Load File / LDP Container"> -->
+<!--
+<div style="width:100px"> --> <!-- for now this will set the width of the text field. I need to work  -->
+<!--
+   <input type="text" name="name" id="loadfileldptext" value="miserables.json" class="text ui-widget-content ui-corner-all"> 
+</div>
+-->
+</div>
+  <div class="box b">
+    <div class="box ba">BA</div>
+    <div class="box bb">BB</div>
+  </div>
+  <div class="box c" id="duck">
+
+<script>
+
+// The load file needs to come in here...
+   require(['config','cp-index-adid-strip-button-callfn','function-d3sketch'], function(buttonfunc,fncd3sketch) {
+         
+     });
+
+// var file = "miserables.json";
+
+//d3sketch(file);
+
+</script>
+
+
+  </div>
+  <div class="box d">
+     <div class="box da" id="users">DA</div>
+     <div class="box db">DB</div>
+  </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!-- Based off of draggable.html accompanying chapter12:
+                <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+     <link rel = "stylesheet" type="text/css" href="style.css">     
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width" orientation="portrait">
+   <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link href="cond-interact.css" rel="stylesheet"> <!-- modified to include only necessary code -->
+
+<script>
+    $( function() {
+ 
+   $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    $( "button, input, a" ).click( function( event ) {
+      event.preventDefault();
+    } );
+
+    $( "#dialog" ).dialog({
+      autoOpen: false 
+    });
+ 
+   $( "#sparqlendpoint" ).on( "click", function() { 
+     $( "#dialog" ).dialog( "open" ); // invokes the open method
+    });
+
+  } );
+
+</script>
+<!--end McFarland's book -->
+  </head>
+<body>
+  
+<!-- Modified McFarland Book code -->
+
+<div class="wrapper">
+ 
+<div id="dialog" title="Basic dialog">
+  <p>Do your SPARQL Query Here:</p>
+   <input name="textfield" type="text" id="textfield">
+                    <div class="widget">
+                           <button>Execute</button>
+                    </div>
+</div>
+ 
+<!-- end of modified code -->
+
+  <div style="background-color:#EEEEEE" class="box a">
+   <button id="sparqlendpoint">SPARQL Endpoint</button>
+   <input name="textfield" type="text" id="textfield">
+   <input name="button" type="button" id="button" value="Load File / LDP Container">
+
+</div>
+  <div class="box b">
+    <div class="box ba">BA</div>
+    <div class="box bb">BB</div>
+  </div>
+  <div class="box c" id="duck">
+  </div>
+  <div class="box d">
+     <div class="box da">DA</div>
+     <div class="box db">DB</div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
