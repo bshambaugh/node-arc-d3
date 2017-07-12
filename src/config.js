@@ -8,14 +8,13 @@ requirejs.config({
         d3: '../node_modules/d3/build/d3',
         urijs: '../node_modules/urijs/src',
         jsonld: '../node_modules/jsonld/js/jsonld',
-
         fn_ldpsparql: './fn_ldpsparql',
         fn_triplemodifications: './fn_triplemodifications',
         fn_parsefile: './fn_parsefile',
         parsetriples: './parsetriples',
         'call-d3sketch': './call-d3sketch',
-        'd3sketch': './d3sketch'
-
+        'd3sketch': './d3sketch',
+        'jquery-ui': './jquery-ui-1.12.1/jquery-ui.js'
     }
 
 });
