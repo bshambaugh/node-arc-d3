@@ -28,12 +28,22 @@ var url = 'http://localhost/node-arc-d3/data/test.nq'; -->
 # Use: 
 
 ## How to load a file:
+For local testing, find files in the [http://localhost/node-arc-d3/data](http://localhost/node-arc-d3/data) folder. Loading old-Food-Growing-Methods.ttl should work. Load this file by pasting http://localhost/node-arc-d3/data/old-Food-Growing-Methods.ttl in the text field to the left of the Load File / LDP Container button, then press the Load File / LDP Container button.
 
 ## How to load an LDP Container:
 
+For local testing, begin by installing [Apache Marmotta](http://marmotta.apache.org/) or similar LDP Server. 
+Select the desired LDP container URL.
+
+Paste this URL in the text field to the left of the Load File / LDP Container button, then press the Load File / LDP Container button.
+
 ## How to perform a Sparql Query:
 
+Be sure that a Sparql Endpoint such as [Apache Marmotta](http://marmotta.apache.org/) is Installed. Then press the Sparql Endpoint button.
+ 
 ![gridwgraphandjqueryuidialog.png](js/tests/gridwgraphandjqueryuidialog.png)
+
+Substitute a plain text(?)  sparql query in the "Do your SPARQL Query here" text box, then press Execute.
 
 Supports Turtle, TriG, N-Triples, N-Quads, and Notation3 (N3) from ![N3](https://github.com/RubenVerborgh/N3.js) .
 Also supports JSON-LD from ![jsonld.js](https://github.com/digitalbazaar/jsonld.js) .
