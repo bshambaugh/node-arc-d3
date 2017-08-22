@@ -47,6 +47,9 @@ Substitute a sparql query in the "Do your SPARQL Query here" text box, then pres
 
 Try this: [http://localhost:8080/marmotta/sparql/select?query=SELECT%20*%20WHERE%20%7B%3Fs%20%3Fp%20%3Fo%7D%20LIMIT%2010](http://localhost:8080/marmotta/sparql/select?query=SELECT%20*%20WHERE%20%7B%3Fs%20%3Fp%20%3Fo%7D%20LIMIT%2010)
 
+Currently only this type of URL works. See Issue
+[24](https://github.com/bshambaugh/node-arc-d3/issues/24).
+
 # Support: 
 
 Supports Turtle, TriG, N-Triples, N-Quads, and Notation3 (N3) from ![N3](https://github.com/RubenVerborgh/N3.js) .
@@ -62,9 +65,9 @@ The Grid Layout Boxes (A, DA, DB, ..) are Supported by the Following Browsers: [
 
 # Goal:
 
-In the near future with issue [#22](https://github.com/bshambaugh/node-arc-d3/issues/22) :
+Replace the D3 Visualization with a [Sigma.js](http://sigmajs.org/) Visualation.
 
-![goal.png](/js/tests/goal/goal.png)
+Add Custom buttons in the left most column, and triples visualization on the right most column.
 
 In the bit farther future with PowerAqua for Open QA using ![PowerAqua-decompiled](https://github.com/bshambaugh/PowerAqua-decompiled), [PowerAqua Backup Files](https://sourceforge.net/projects/poweraqua/files/), and local files stored at /var/lib/tomcat7/webapps/poweraqua . In focus: "Car Projects with Brent Shambaugh" text box, Query Button to the right, column on the far right, and graph in the center. Also the "Data Path or URI" text box, and Load Data Button (called the Load File / LDP Container button above). Ignore: Column on the left (not everything is implemented yet), Documents box (it is part of of M. Fernandez' Thesis), 
 ![EISPP_3_M_Fernandez_NLQ_2.png](/js/tests/goal/EISPP_3_M_Fernandez_NLQ_2.png)
