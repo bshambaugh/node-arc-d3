@@ -1,8 +1,11 @@
 #Expressing RDF triples written in turtle as graph primatives (nodes,edges) fed to d3 force directed graph. Descendant of [map](https://github.com/bshambaugh/map/) and [node-arc-p5](https://github.com/bshambaugh/node-arc-p5).
 
 <!-- ![forceCollidefitnodelabels.png](/js/tests/forceCollidefitnodelabels.png) -->
-![gridwgraph.png](/js/tests/gridwgraph.png)
+<!-- ![gridwgraph.png](/js/tests/gridwgraph.png) -->
 
+![gridwgraphandjqueryuibutton.png](js/tests/gridwgraphandjqueryuibutton.png)
+
+![gridwgraphandjqueryuidialog.png](js/tests/gridwgraphandjqueryuidialog.png)
 
 Run this by dropping in /var/www/html or whatever your Apache web root is
 
