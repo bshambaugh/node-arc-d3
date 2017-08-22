@@ -1,4 +1,4 @@
-#Expressing RDF triples written in turtle as graph primatives (nodes,edges) fed to d3 force directed graph. Descendant of [map](https://github.com/bshambaugh/map/) and [node-arc-p5](https://github.com/bshambaugh/node-arc-p5).
+Description: Expressing RDF triples written in turtle as graph primatives (nodes,edges) fed to d3 force directed graph. Descendant of [map](https://github.com/bshambaugh/map/) and [node-arc-p5](https://github.com/bshambaugh/node-arc-p5).
 
 <!-- ![forceCollidefitnodelabels.png](/js/tests/forceCollidefitnodelabels.png) -->
 <!-- ![gridwgraph.png](/js/tests/gridwgraph.png) -->
@@ -7,9 +7,7 @@
 
 ![gridwgraphandjqueryuidialog.png](js/tests/gridwgraphandjqueryuidialog.png)
 
-Run this by dropping in /var/www/html or whatever your Apache web root is
-
-Git Clone node-arc-d3 to a web folder (/var/www.html or whatever your Apache web root is) and install the node modules by follwing the steps:
+Install this with git Clone node-arc-d3 to a web folder (/var/www.html or whatever your Apache web root is) with the node module dependencies by follwing the steps:
 
 (1) cd /var/www/html
 
