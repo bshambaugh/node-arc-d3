@@ -15,11 +15,13 @@ Git Clone node-arc-d3 to a web folder (/var/www.html or whatever your Apache web
 
 (2) git clone https://github.com/bshambaugh/node-arc-d3
 
-(3) npm init
+(3) cd node-arc-d3
 
-(4) npm install --save d3 jquery jsonld lodash n3 requirejs urijs jquery-ui
+(4) npm init
 
-(5) In a web-browser serve from http://localhost/node-arc-d3/
+(5) npm install --save d3 jquery jsonld lodash n3 requirejs urijs jquery-ui
+
+(6) In a web-browser serve from http://localhost/node-arc-d3/
 
 ##Replace the variable url with the path to your file in ![d3sketch.js](/js/d3sketch.js).
 
