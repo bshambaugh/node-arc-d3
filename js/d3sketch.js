@@ -11,7 +11,8 @@ define(['d3','jquery','createprimitives'], function(d3,$,createprimitives) {
 // var url = 'http://localhost/node-arc-d3/data/person.jsonld';
 
 return function(url) {
-   longProcess(url,myCallback);
+//   return longProcess(url,myCallback);
+     longProcess(url,myCallback);
 }
 
 

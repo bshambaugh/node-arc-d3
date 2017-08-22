@@ -1,4 +1,4 @@
-define(['libraries/fn_triplemodifications'],function(tmfn) {
+define(['fn_triplemodifications'],function(tmfn) {
 
 return function (triples, replacements, nsURIs, baseURIs, url) {
 //var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';

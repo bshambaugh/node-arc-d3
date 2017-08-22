@@ -18,8 +18,9 @@
   },
   "homepage": "https://github.com/bshambaugh/node-arc-d3#readme",
   "dependencies": {
-    "d3": "^4.9.1",
+    "d3": "^4.10.0",
     "jquery": "^3.2.1",
+    "jquery-ui": "^1.12.1",
     "jsonld": "^0.4.12",
     "lodash": "^4.17.4",
     "n3": "^0.10.0",

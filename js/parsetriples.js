@@ -1,4 +1,4 @@
-define(['urijs/URI','jquery','libraries/fn_ldpsparql','libraries/fn_parsefile'], function(URI,$,ldpsparql,parsefile) {
+define(['urijs/URI','jquery','fn_ldpsparql','fn_parsefile'], function(URI,$,ldpsparql,parsefile) {
 
 return function(url, fn) {
   if(URI(url)._parts.query !== null) {
