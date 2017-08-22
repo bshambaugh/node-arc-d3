@@ -1,32 +1,171 @@
+<!-- Based off of draggable.html accompanying chapter12:
+                <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+-->
+
 <!DOCTYPE html>
 <html>
   <head>
      <link rel = "stylesheet" type="text/css" href="css/style.css">     
-     <link rel = "stylesheet" type="text/css" href="css/theme.css">
-     <script data-main="js/config" src="js/libraries/require.js"></script>
      <meta charset="UTF-8">
-  </head>
+     <meta name="viewport" content="width=device-width" orientation="portrait">
+     <link rel="stylesheet" href="css/jquery-ui.css"> 
+<!--     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+<!--     <link rel="stylesheet" href="http://localhost/test/sites/all/modules/jquery_update/replace/ui/themes/base/jquery-ui.css"> -->
+     <link rel="stylesheet" href="css/index-adid-strip-button.css">
+           <script src="node_modules/requirejs/require.js"></script>
+          <script src="./js/1-bootstrap.js" data-modules="effect">
+ 
+   require(['d3sketch'], function(d3sketch) {
+// require(['isthebest'], function(isthebest) {
+
+$( function() {
+    var dialog, form,
+      name = $( "#name" );
+
+    function addUser() {
+
+   //   var siteDomain = "http://localhost:8080/marmotta/sparql?query=";
+          alert(name.val());
+      
+//    $( "#users" ).append( name.val() );  
+// I only want to append if name.val() ) resolves... (so I need to do an xmlhttp request...)
+//     alert('hello!');
+    // I added the following two lines of code to allow for overwriting
+    var container = document.getElementById('graphcontainer');
+    container.innerHTML = '';
+    $("#graphcontainer").append( d3sketch(name.val()) );
+//    $("#graphcontainer").replaceWith( d3sketch(name.val()) ); 
+
+   //   $( "#users" ).append( siteDomain + encodeURIComponent(name.val()) );
+        dialog.dialog( "close" );
+    }
+ 
+    dialog = $( "#dialog-form" ).dialog({
+      autoOpen: false,
+      height: 220,
+      width: 285,
+      modal: true,
+      buttons: {
+        "Execute": addUser,
+        Cancel: function() {
+          dialog.dialog( "close" );
+        }
+      },
+      close: function() {
+        form[ 0 ].reset();
+      }
+    });
+ 
+    form = dialog.find( "form" ).on( "submit", function( event ) {
+      event.preventDefault();
+      addUser();
+    });
+ 
+    $( "#create-user" ).button().on( "click", function() {
+      dialog.dialog( "open" );
+    });
+ 
+    $("#loadfileldpbutton").button().on("click", function() {
+      //  alert("howdy");
+          var $field = $('#textfield');
+          var fieldVal = $field.val();
+          alert(fieldVal);
+
+          if(fieldVal) {
+          
+             // erase the present contents of the graphcontainer container
+             var container = document.getElementById('graphcontainer');
+             container.innerHTML = '';
+             // add new content to the graphcontainer container
+//              $('#graphcontainer').append(fieldVal);
+//              $('#graphcontainer').append(isthebest(fieldVal));
+              $('#graphcontainer').append(d3sketch(fieldVal));  
+//              $('#graphcontainer').replaceWith(d3sketch(fieldVal));
+          // $('#tasklist').replaceWith(d3sketch(fieldVal));
+           $field.val('');
+           $field.focus();
+          }
+    });
+
+/*
+    function isthebest(value) {
+        return value+" is the best!";
+    }
+*/
+/*
+     $( "#loadfileldpbutton" ).button().on( "click", function() {
+         var $field = $('#textfield');
+         var fieldVal = $field.val();
+         if(fieldVal) {
+           // erase the present contents of the graphcontainer container
+           var container = document.getElementById('graphcontainer');
+           container.innerHTML = '';
+           // add new content to the graphcontainer container via the tasklist id
+           $('#tasklist').replaceWith(d3sketch(fieldVal));
+           $field.val('');
+           $field.focus();
+         }  
+    });
+*/
+
+  } );
+
+});
+  </script>
+
+<!--end McFarland's book -->
+ </head>
 <body>
-
-     <script>
-//     require(['config','jquery','jqueryui','d3sketch','parsetriples','triplemodifications','libraries/fn_triplemodifications','createprimitives','cp_index_adid_strip_button_callfn'], function(d3sketch,$,parsetriples,triplemodifications,fn_triplemodifications,createprimitives,cp_index_adid_strip_button_callfn) {
-require(['config','d3sketch','parsetriples','triplemodifications','libraries/fn_triplemodifications','createprimitives'], function(d3sketch,parsetriples,triplemodifications,fn_triplemodifications,createprimitives) {
-
-                  require(['call-d3sketch'])
-     });
-     </script>
   
+<!-- Modified McFarland Book code -->
+
+<div id="dialog-form" title="SPARQL Endpoint">
+
+  <form>
+    <fieldset>
+      <label for="name">Do your SPARQL Query here:</label>
+      <input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
+      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+    </fieldset>
+  </form>
+</div>
+
+
 <div class="wrapper">
-  <div class="box a">A</div>
+
+  <div style="background-color:#EEEEEE" class="box a">
+     <button id="create-user">SPARQL Endpoint</button> 
+<!--   <input name="button" type="button" id="create-user" value="SPARQL Endpoint"> -->
+   <input name="textfield" type="text" id="textfield">
+   <button id="loadfileldpbutton">Load File / LDP Container</button>
+<!--   <input name="button" type="button" id="button" value="Load File / LDP Container"> -->
+<!--
+<div style="width:100px"> --> <!-- for now this will set the width of the text field. I need to work  -->
+<!--
+   <input type="text" name="name" id="loadfileldptext" value="miserables.json" class="text ui-widget-content ui-corner-all"> 
+</div>
+-->
+</div>
   <div class="box b">
     <div class="box ba">BA</div>
     <div class="box bb">BB</div>
     <div class="box bc">BC</div>
   </div>
   <div class="box c" id="graphcontainer">
+<!--
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+// var file = "miserables.json";
+
+//d3sketch(file);
+
+</script>
+-->
+
   </div>
   <div class="box d">
-     <div class="box da">DA</div>
+     <div class="box da" id="users">DA</div>
      <div class="box db">DB</div>
   </div>
 </div>
@@ -35,3 +174,4 @@ require(['config','d3sketch','parsetriples','triplemodifications','libraries/fn_
 
 </body>
 </html>
+
