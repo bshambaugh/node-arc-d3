@@ -23,9 +23,17 @@ Git Clone node-arc-d3 to a web folder (/var/www.html or whatever your Apache web
 
 (6) In a web-browser serve from http://localhost/node-arc-d3/
 
-##Replace the variable url with the path to your file in ![d3sketch.js](/js/d3sketch.js).
+<!--Replace the variable url with the path to your file in ![d3sketch.js](/js/d3sketch.js).
 
-##var url = 'http://localhost/node-arc-d3/data/test.nq';
+var url = 'http://localhost/node-arc-d3/data/test.nq'; -->
+
+#Use: 
+
+##How to load a file:
+
+##How to load an LDP Container:
+
+##How to perform a Sparql Query:
 
 Supports Turtle, TriG, N-Triples, N-Quads, and Notation3 (N3) from ![N3](https://github.com/RubenVerborgh/N3.js) .
 Also supports JSON-LD from ![jsonld.js](https://github.com/digitalbazaar/jsonld.js) .
