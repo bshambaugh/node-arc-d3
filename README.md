@@ -7,7 +7,9 @@ Description: Expressing RDF triples written in turtle as graph primatives (nodes
 
 ![gridwgraphandjqueryuidialog.png](js/tests/gridwgraphandjqueryuidialog.png)
 
-Install this with git Clone node-arc-d3 to a web folder (/var/www.html or whatever your Apache web root is) with the node module dependencies by follwing the steps:
+# Installation:
+
+Install this with git Clone node-arc-d3 to a web folder (/var/www.html or whatever your Apache web root is) with the node module dependencies by following the steps:
 
 (1) cd /var/www/html
 
