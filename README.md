@@ -9,10 +9,21 @@
 
 Run this by dropping in /var/www/html or whatever your Apache web root is
 
-Git Clone node-arc-d3 to a web folder (/var/www.html or whatever your Apache web root is). Replace the variable url with the
-path to your file in ![d3sketch.js](/js/d3sketch.js).
+Git Clone node-arc-d3 to a web folder (/var/www.html or whatever your Apache web root is) and install the node modules by follwing the steps:
 
-var url = 'http://localhost/node-arc-d3/data/test.nq';
+(1) cd /var/www/html
+
+(2) git clone https://github.com/bshambaugh/node-arc-d3
+
+(3) npm init
+
+(4) npm install --save d3 jquery jsonld lodash n3 requirejs urijs jquery-ui
+
+(5) In a web-browser serve from http://localhost/node-arc-d3/
+
+##Replace the variable url with the path to your file in ![d3sketch.js](/js/d3sketch.js).
+
+##var url = 'http://localhost/node-arc-d3/data/test.nq';
 
 Supports Turtle, TriG, N-Triples, N-Quads, and Notation3 (N3) from ![N3](https://github.com/RubenVerborgh/N3.js) .
 Also supports JSON-LD from ![jsonld.js](https://github.com/digitalbazaar/jsonld.js) .
