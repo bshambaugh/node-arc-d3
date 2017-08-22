@@ -5,8 +5,6 @@ Description: Expressing RDF triples written in turtle as graph primatives (nodes
 
 ![gridwgraphandjqueryuibutton.png](js/tests/gridwgraphandjqueryuibutton.png)
 
-![gridwgraphandjqueryuidialog.png](js/tests/gridwgraphandjqueryuidialog.png)
-
 # Installation:
 
 Install this with git Clone node-arc-d3 to a web folder (/var/www.html or whatever your Apache web root is) with the node module dependencies by following the steps:
@@ -34,6 +32,8 @@ var url = 'http://localhost/node-arc-d3/data/test.nq'; -->
 ## How to load an LDP Container:
 
 ## How to perform a Sparql Query:
+
+![gridwgraphandjqueryuidialog.png](js/tests/gridwgraphandjqueryuidialog.png)
 
 Supports Turtle, TriG, N-Triples, N-Quads, and Notation3 (N3) from ![N3](https://github.com/RubenVerborgh/N3.js) .
 Also supports JSON-LD from ![jsonld.js](https://github.com/digitalbazaar/jsonld.js) .
