@@ -43,7 +43,9 @@ Be sure that a Sparql Endpoint such as [Apache Marmotta](http://marmotta.apache.
  
 ![gridwgraphandjqueryuidialog.png](js/tests/gridwgraphandjqueryuidialog.png)
 
-Substitute a plain text(?)  sparql query in the "Do your SPARQL Query here" text box, then press Execute.
+Substitute a sparql query in the "Do your SPARQL Query here" text box, then press Execute.
+
+Try this: [http://localhost:8080/marmotta/sparql/select?query=SELECT%20*%20WHERE%20%7B%3Fs%20%3Fp%20%3Fo%7D%20LIMIT%2010](http://localhost:8080/marmotta/sparql/select?query=SELECT%20*%20WHERE%20%7B%3Fs%20%3Fp%20%3Fo%7D%20LIMIT%2010)
 
 # Support: 
 
