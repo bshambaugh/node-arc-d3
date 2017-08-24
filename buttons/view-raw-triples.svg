@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<svg width="223" height="226.8" xmlns="http://www.w3.org/2000/svg">
+  <defs> 
+	<marker id="ArrowEnd" viewBox="0 0 10 10" refX="0" refY="5" 
+		markerUnits="strokeWidth" 
+		markerWidth="4" 
+		markerHeight="3" 
+		orient="auto"> 
+		<path d="M 0 0 L 10 5 L 0 10 z" /> 
+	</marker>
+	<marker id="ArrowStart" viewBox="0 0 10 10" refX="10" refY="5" 
+		markerUnits="strokeWidth" 
+		markerWidth="4" 
+		markerHeight="3" 
+		orient="auto"> 
+		<path d="M 10 0 L 0 5 L 10 10 z" /> 
+	</marker> </defs>
+<g>
+</g>
+<g>
+<g>
+<path style="stroke:none; fill:#000000" d="M 37.1 129.5C 35.2 129.5 33.7 130.2 32.5 131.4C 31.2 132.7 30.6 134.2 30.6 136C 30.6 137.9 31.2 139.4 32.5 140.7C 33.7 141.9 35.2 142.5 37.1 142.5C 38.9 142.5 40.4 141.9 41.7 140.7C 42.9 139.4 43.6 137.9 43.6 136C 43.6 134.2 42.9 132.7 41.7 131.4C 40.4 130.2 38.9 129.5 37.1 129.5z"/>
+<path style="stroke:none; fill:#000000" d="M 37.3 163.8C 35.4 163.8 33.9 164.5 32.7 165.7C 31.4 166.9 30.8 168.5 30.8 170.3C 30.8 172.1 31.4 173.7 32.7 174.9C 33.9 176.2 35.4 176.8 37.3 176.8C 39.1 176.8 40.6 176.2 41.9 174.9C 43.1 173.7 43.8 172.1 43.8 170.3C 43.8 168.5 43.1 166.9 41.9 165.7C 40.6 164.5 39.1 163.8 37.3 163.8z"/>
+<path style="stroke:none; fill:#000000" d="M 43.3 203.3C 43.3 201.5 42.6 199.9 41.4 198.7C 40.1 197.4 38.6 196.8 36.8 196.8C 34.9 196.8 33.4 197.4 32.2 198.7C 30.9 199.9 30.3 201.5 30.3 203.3C 30.3 205.1 30.9 206.7 32.2 207.9C 33.4 209.2 34.9 209.8 36.8 209.8C 38.6 209.8 40.1 209.2 41.4 207.9C 42.6 206.7 43.3 205.1 43.3 203.3z"/>
+</g>
+</g>
+<g>
+<path style="stroke:#000000; stroke-width:4.0; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 218.3 118.8C 147.3 118.8 76.3 118.8 5.3 118.8L 5.3 224.8L 218.3 224.8L 218.3 118.8"/>
+</g>
+</svg>

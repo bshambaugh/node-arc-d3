@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<svg width="224" height="228.5" xmlns="http://www.w3.org/2000/svg">
+  <defs> 
+	<marker id="ArrowEnd" viewBox="0 0 10 10" refX="0" refY="5" 
+		markerUnits="strokeWidth" 
+		markerWidth="4" 
+		markerHeight="3" 
+		orient="auto"> 
+		<path d="M 0 0 L 10 5 L 0 10 z" /> 
+	</marker>
+	<marker id="ArrowStart" viewBox="0 0 10 10" refX="10" refY="5" 
+		markerUnits="strokeWidth" 
+		markerWidth="4" 
+		markerHeight="3" 
+		orient="auto"> 
+		<path d="M 10 0 L 0 5 L 10 10 z" /> 
+	</marker> </defs>
+<g>
+<g>
+<path style="stroke:#000000; stroke-width:4.0; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 101.7 162.4L 61.6 151.1"/>
+<path style="stroke:#000000; stroke-width:4.0; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 63.3 194.5L 102.3 170"/>
+<path style="stroke:#000000; stroke-width:4.0; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 123.5 169.2L 167.9 186.4"/>
+<path style="stroke:#000000; stroke-width:4.0; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 219 120.5C 148 120.5 77 120.5 6 120.5L 6 226.5L 219 226.5L 219 120.5"/> 
+</g>
+</g>
+<g>
+<g>
+<path style="stroke:none; fill:#000000" d="M 190.1 190.4C 190.1 187.2 189 184.5 186.7 182.3C 184.5 180.1 181.8 179 178.7 179C 175.5 179 172.8 180.1 170.6 182.3C 169.4 183.5 168.5 184.8 168 186.2C 167.5 187.5 167.2 188.9 167.3 190.4C 167.2 193.5 168.3 196.2 170.6 198.4C 172.8 200.7 175.5 201.8 178.7 201.8C 181.8 201.8 184.5 200.7 186.7 198.4C 189 196.2 190.1 193.5 190.1 190.4z"/>
+<path style="stroke:none; fill:#000000" d="M 58.7 139.8C 56.5 137.6 53.8 136.5 50.7 136.5C 47.5 136.5 44.8 137.6 42.6 139.8C 41.4 141 40.5 142.3 40 143.7C 39.5 145 39.2 146.4 39.3 147.9C 39.2 151 40.3 153.7 42.6 155.9C 44.8 158.2 47.5 159.3 50.7 159.3C 53.8 159.3 56.5 158.2 58.7 155.9C 60.2 154.5 61.2 152.8 61.7 151C 61.9 150 62.1 148.9 62.1 147.9C 62.1 144.7 61 142 58.7 139.8z"/>
+<path style="stroke:none; fill:#000000" d="M 112.9 153.8C 109.7 153.8 107 154.9 104.8 157.1C 103.6 158.3 102.7 159.6 102.2 161.1C 102 161.5 101.9 161.8 101.8 162.2C 101.6 163.2 101.4 164.2 101.5 165.2C 101.4 166.9 101.7 168.5 102.4 169.8C 102.9 171.1 103.7 172.2 104.8 173.3C 107 175.5 109.7 176.6 112.9 176.6C 116 176.6 118.7 175.5 120.9 173.3C 122.2 172 123.1 170.6 123.6 169.1C 124.1 167.9 124.3 166.6 124.3 165.2C 124.3 162.1 123.2 159.4 120.9 157.1C 118.7 154.9 116 153.8 112.9 153.8z"/>
+<path style="stroke:none; fill:#000000" d="M 63.4 194.3C 62.9 193.6 62.4 192.9 61.7 192.3C 59.5 190.1 56.8 189 53.7 189C 50.5 189 47.8 190.1 45.6 192.3C 44.4 193.5 43.5 194.8 43 196.2C 42.5 197.5 42.2 198.9 42.3 200.4C 42.2 203.5 43.3 206.2 45.6 208.4C 47.8 210.7 50.5 211.8 53.7 211.8C 56.8 211.8 59.5 210.7 61.7 208.4C 64 206.2 65 203.5 65 200.4C 65 198.1 64.5 196.1 63.4 194.3z"/>
+</g>
+</g>
+</svg>

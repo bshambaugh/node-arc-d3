@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<svg width="83.3" height="79.6" xmlns="http://www.w3.org/2000/svg">
+  <defs> 
+	<marker id="ArrowEnd" viewBox="0 0 10 10" refX="0" refY="5" 
+		markerUnits="strokeWidth" 
+		markerWidth="4" 
+		markerHeight="3" 
+		orient="auto"> 
+		<path d="M 0 0 L 10 5 L 0 10 z" /> 
+	</marker>
+	<marker id="ArrowStart" viewBox="0 0 10 10" refX="10" refY="5" 
+		markerUnits="strokeWidth" 
+		markerWidth="4" 
+		markerHeight="3" 
+		orient="auto"> 
+		<path d="M 10 0 L 0 5 L 10 10 z" /> 
+	</marker> </defs>
+<g>
+<g>
+<path style="stroke:none; fill:#000000" d="M 18.5 69.8L 61.5 39.8L 18.5 12.3L 18.5 69.8z"/>
+<path style="stroke:#000000; stroke-width:4.0; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 2 2L 2 77.6L 81.3 77.6L 81.3 2L 2 2"/>
+</g>
+</g>
+</svg>
