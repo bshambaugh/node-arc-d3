@@ -17,7 +17,7 @@ Install this with git Clone node-arc-d3 to a web folder (/var/www.html or whatev
 
 (4) npm init
 
-(5) npm install --save d3 jquery jsonld lodash n3 requirejs urijs jquery-ui
+(5) npm install --save d3 jquery jsonld lodash n3 requirejs urijs jquery-ui sigma
 
 (6) In a web-browser serve from http://localhost/node-arc-d3/
 
