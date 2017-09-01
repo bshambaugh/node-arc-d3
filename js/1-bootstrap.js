@@ -96,12 +96,14 @@ require.config( {
                 urijs: "../../urijs/src/",
                 triplemodifications: "../../../js/triplemodifications",
                 createprimitives: "../../../js/createprimitives",
-                d3sketch: "../../../js/d3sketch"
+                d3sketch: "../../../js/d3sketch",
+                sigma: "../../sigma/build/sigma.require"
              //   d3: "../../d3/build/d3"
 	},
 	shim: {
 		"external/globalize/globalize.culture.de-DE": [ "external/globalize/globalize" ],
-		"external/globalize/globalize.culture.ja-JP": [ "external/globalize/globalize" ]
+		"external/globalize/globalize.culture.ja-JP": [ "external/globalize/globalize" ],
+                "sigma" : {  exports: "sigma" }
 	}
 } );
 
@@ -128,6 +130,8 @@ modules.push('parsetriples');
 modules.push('triplemodifications');
 modules.push('createprimitives');
 modules.push('d3sketch');
+// push in the sigma
+modules.push('sigma');
 
 require( modules, function() {
 	var newScript = document.createElement( "script" );
