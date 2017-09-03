@@ -47,14 +47,6 @@ for (var i = 0; i < triples.length; i++) {
   objects.push(triples[i][2]);
 }
 
-document.write('Here are the subjects');
-document.write(subjects);
-
-document.write('++++++++++++++++++++++++++++++++++++++++++++++++++');
-
-document.write('Here are the objects');
-document.write(objects);
-
 // combine the subject and object arrays and sort and find uniq elements
 var uniqNodes = _.uniq(_.concat(subjects,objects).sort());
 
