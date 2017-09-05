@@ -99,7 +99,8 @@ require.config( {
                 createprimitives: "../../../js/createprimitives",
                 d3sketch: "../../../js/d3sketch",
                 sigmasketch: "../../../js/sigmasketch",
-                sigma: "../../sigma/build/sigma.require"
+                sigma: "../../../js/libraries/sigma.require"
+//                sigma: "../../sigma/build/sigma.require"
              //   d3: "../../d3/build/d3"
 	},
 	shim: {
