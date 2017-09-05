@@ -95,8 +95,10 @@ require.config( {
                 parsetriples: "../../../js/parsetriples",
                 urijs: "../../urijs/src/",
                 triplemodifications: "../../../js/triplemodifications",
+                sigma_createprimitives: "../../../js/sigma-createprimitives",
                 createprimitives: "../../../js/createprimitives",
                 d3sketch: "../../../js/d3sketch",
+                sigmasketch: "../../../js/sigmasketch",
                 sigma: "../../sigma/build/sigma.require"
              //   d3: "../../d3/build/d3"
 	},
@@ -128,8 +130,10 @@ modules.push('fn_ldpsparql');
 modules.push('fn_triplemodifications');
 modules.push('parsetriples');
 modules.push('triplemodifications');
+modules.push('sigma_createprimitives');
 modules.push('createprimitives');
 modules.push('d3sketch');
+modules.push('sigmasketch');
 // push in the sigma
 modules.push('sigma');
 
