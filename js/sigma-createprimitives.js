@@ -3,7 +3,7 @@ define(['lodash','jquery','parsetriples','triplemodifications'], function(_,$,pa
 // Input:
 //  var triples = [["d", "i", "q"],["a", "f", "c"],["c", "g", "d"],["e", "h", "c"],["c", "i", "q"]];
 // Output:
-// {"links":[{"source":"d","target":"q","value":1,"label":"i"},{"source":"a","target":"c","value":1,"label":"f"},{"source":"c","target":"d","value":1,"label":"g"},{"source":"e","target":"c","value":1,"label":"h"},{"source":"c","target":"q","value":1,"label":"i"}],"nodes":[{"id":"a","group":1},{"id":"c","group":1},{"id":"d","group":1},{"id":"e","group":1},{"id":"q","group":1}]}
+// {"edges":[{"source":"d","target":"q","value":1,"label":"i"},{"source":"a","target":"c","value":1,"label":"f"},{"source":"c","target":"d","value":1,"label":"g"},{"source":"e","target":"c","value":1,"label":"h"},{"source":"c","target":"q","value":1,"label":"i"}],"nodes":[{"id":"a","group":1},{"id":"c","group":1},{"id":"d","group":1},{"id":"e","group":1},{"id":"q","group":1}]}
 // baseURIs and nsURIs defined like replacements in textprefixestojson
 var baseURIs = [ { prefix: 'base1', uri: 'http://dogbone.org' },
   { prefix: 'base3', uri: 'http://giraffe.org' },
@@ -60,7 +60,7 @@ for(var i = 0; i < uniqNodes.length; i++) {
     nodes.push(new node(uniqNodes[i],group,uniqNodes[i],x,y,size,color));
 }
 
-var links = [];
+var edges = [];
 
 for(var i = 0; i < triples.length; i++) {
   for(var j = 0; j < uniqNodes.length; j++) { 
@@ -78,20 +78,20 @@ for(var i = 0; i < triples.length; i++) {
   var size = Math.random();
   var color = '#ccc';
   var type = 'curve';
-     links.push(new link(i,source,target,value,triples[i][1],size,color,type));
+     edges.push(new edge(i,source,target,value,triples[i][1],size,color,type));
 }
 
-var primitives = {links: links, nodes: nodes};
+var primitives = {edges: edges, nodes: nodes};
 
 var JSONprimatives = JSON.stringify(primitives);
-document.write(JSONprimatives);
+//document.write(JSONprimatives);
 //document.write(primitives);
 //return JSONprimatives;
 
 return primitives;
 }
 
-function link(id,source,target,value,label,size,color,type) {
+function edge(id,source,target,value,label,size,color,type) {
   this.id = id;
   this.source = source;
   this.target = target;
