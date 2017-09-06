@@ -52,21 +52,22 @@ function longProcess(url,callbackfn) {
 }
 
 function myCallback(results) {
-   var height = document.getElementById('graphcontainer').clientHeight - 4 * document.getElementById('graphcontainer').clientTop;
-  var width = document.getElementById('graphcontainer').clientWidth - 2 * document.getElementById('graphcontainer').clientLeft;
+//   var height = document.getElementById('graphcontainer').clientHeight - 4 * document.getElementById('graphcontainer').clientTop;
+//  var width = document.getElementById('graphcontainer').clientWidth - 2 * document.getElementById('graphcontainer').clientLeft;
 
 //  width = 1024;
 //  height = 800;
 //    width = 600;
 //    height = 500;
 //  console.log(results);
-  draw(width,height,results);
+  draw(results);
+//  draw(width,height,results);
 }
 
 // longProcess(url,myCallback);
 
-
-function draw(width,height,graph) {
+function draw(graph) {
+//function draw(width,height,graph) {
 
 /**
  * Just a simple example to show how to use the sigma.layout.noverlap
