@@ -59,31 +59,6 @@ function myCallback(results) {
 //    width = 600;
 //    height = 500;
  // console.log(results);
-   var container = document.getElementById('prefixcontainer');
-   container.innerHTML = '';
-
-    let str_prefixes = '';
-
-   for(var i = 0; i < results.replacements.length; i++) {
-       str_prefixes = str_prefixes + '@prefix ' + results.replacements[i].prefix + ': &lt;<a href="' + results.replacements[i].uri + '" target="new">'+ results.replacements[i].uri + '</a>&gt; .' + '<br>';
-   }
-
-//   document.getElementById('prefixcontainer').innerHTML = str_prefixes;  
-
-   $('#prefixcontainer').append(str_prefixes);
-// $('#prefixcontainer').append(JSON.stringify(results.replacements) + JSON.stringify(results.longstrings));
-
-   var container = document.getElementById('triplescontainer');
-   container.innerHTML = '';
-
-   let str_triples = '';
-   for(let i = 0; i < results.triples.length; i++) {
-     str_triples = str_triples + results.triples[i][0] + ' ' + results.triples[i][1] + ' ' +  results.triples[i][2] + ' .'+'<br>';
-   }
-    $('#triplescontainer').append(str_triples);
-// document.getElementById('triplecontainer').innerHTML = str_triples;
-//   $('#triplescontainer').append(JSON.stringify(results.triples));
-
   draw(width,height,results);
 }
 
@@ -92,8 +67,7 @@ function myCallback(results) {
 
 function draw(width,height,graph) {
 
-//document.write(JSON.stringify(graph)); 
-// see https://bl.ocks.org/mbostock/4062045
+ // see https://bl.ocks.org/mbostock/4062045
 
 
    var svgContainer = d3.select(".c").append("svg")

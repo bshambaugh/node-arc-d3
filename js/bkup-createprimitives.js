@@ -25,15 +25,13 @@ return function(url, fn) {
    
    parsetriples(url, function(duck) {
       //  fn(duck);  
-       var primitives = constructPrimitives(triplemodifications(duck, replacements, nsURIs, baseURIs,url));
+       var primitives = constructPrimitives(triplemodifications(duck, replacements, nsURIs, baseURIs,url).triples);
        fn(primitives);     
    });
 
 };
 
-function constructPrimitives(data) {
-
-let triples = data.triples;
+function constructPrimitives(triples) {
 //subject array
 var subjects = [];
 //object array
@@ -74,7 +72,7 @@ for(var i = 0; i < triples.length; i++) {
      links.push(new link(source,target,value,triples[i][1]));
 }
 
-var primitives = {links: links, nodes: nodes, triples: data.triples, replacements: data.replacements, longstrings: data.longstrings};
+var primitives = {links: links, nodes: nodes};
 //var JSONprimatives = JSON.stringify(primatives);
 //return JSONprimatives;
 return primitives;
