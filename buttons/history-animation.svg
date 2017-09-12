@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
-<svg width="121" height="160.05" xmlns="http://www.w3.org/2000/svg">
+<svg width="116.1" height="78.7" xmlns="http://www.w3.org/2000/svg">
   <defs> 
 	<marker id="ArrowEnd" viewBox="0 0 10 10" refX="0" refY="5" 
 		markerUnits="strokeWidth" 
@@ -16,11 +16,9 @@
 		<path d="M 10 0 L 0 5 L 10 10 z" /> 
 	</marker> </defs>
 <g>
+<path style="stroke:none; fill:#000000" d="M 102.1 68.4L 102.1 9.89999L 34.8 9.89999L 34.8 28.9L 13.7 17.7L 13.7 59.7L 34.1 49.2L 34.1 68.4L 102.1 68.4z"/>
 </g>
 <g>
-<path style="stroke:none; fill:#000000" d="M 37.1 91.25L 37.1 110.25L 15.9 99.05L 15.9 141.05L 36.4 130.55L 36.4 149.75L 104.3 149.75L 104.3 91.25L 37.1 91.25z"/>
-</g>
-<g>
-<path style="stroke:#000000; stroke-width:4.0; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 116.3 83.35L 4.3 83.35L 4.3 158.05L 116.3 158.05L 116.3 83.35"/>
+<path style="stroke:#000000; stroke-width:4.0; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 114.1 2L 2 2L 2 76.7L 114.1 76.7L 114.1 2"/>
 </g>
 </svg>
