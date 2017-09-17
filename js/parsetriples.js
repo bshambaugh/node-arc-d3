@@ -15,6 +15,20 @@ return function(url, fn) {
 };
 
 function LDPorFile(url,fn) {
+
+   
+   // Add link for CORS Proxy
+    $.ajaxPrefilter( function (options) {
+      let corsproxy = "";
+      // let corsproxy = "http://0.0.0.0:8081/";
+      if (options.crossDomain && jQuery.support.cors) {
+
+       var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+       options.url = options.url.replace(corsproxy,"");
+       options.url = http + corsproxy + options.url;
+       }
+     });
+
      $.ajax({
            url: url,
            success: function(res, status, xhr) { 
